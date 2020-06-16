@@ -53,7 +53,7 @@ namespace LMSProfile.Controllers
             Session.Clear();
             Session.RemoveAll();
             Session.Abandon(); // it will clear the session at the end of request
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
