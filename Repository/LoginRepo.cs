@@ -78,7 +78,7 @@ namespace LMSProfile.Repository
             connection();
             string accountid = Convert.ToString(form["AccountList"]);
             con.Open();
-            using (SqlCommand cmd = new SqlCommand("SP_Add_Admin_Instructor_User", con))
+            using (SqlCommand cmd = new SqlCommand("SP_Admin_Instructor_User", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@name", model.Name);
@@ -89,6 +89,7 @@ namespace LMSProfile.Repository
                 cmd.Parameters.AddWithValue("@address", model.Address);
                 cmd.Parameters.AddWithValue("@password", model.Password);
                 cmd.Parameters.AddWithValue("@accountid", accountid);
+                cmd.Parameters.AddWithValue("@status","Create");
                 int i = cmd.ExecuteNonQuery();
                 con.Close();
                 if (i < 0)

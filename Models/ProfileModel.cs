@@ -9,6 +9,8 @@ namespace LMSProfile.Models
 {
     public class ProfileModel
     {
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "Name is required")]
         [MaxLength(12)]
         public string Name { get; set; }

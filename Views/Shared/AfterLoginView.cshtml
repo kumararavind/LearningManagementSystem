@@ -24,11 +24,31 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Welcome", "Login")</li>
-                    <li>@Html.ActionLink("View Courses", "GetAllCourse", "Course")</li>
-                    <li>@Html.ActionLink("View Categories", "GetAllCategory", "Category")</li>
-                    <li>@Html.ActionLink("Profile", "ProfileDetails", "Profile")</li>
-                    <li>@Html.ActionLink("Logout", "LogOut", "Login")</li>
+                    @if (Convert.ToInt32(@Session["Accountid"]) == 1)
+                    {
+                        <li>@Html.ActionLink("Home", "Welcome", "Login")</li>
+                        <li>@Html.ActionLink("Courses", "GetAllCourse", "Course")</li>
+                        <li>@Html.ActionLink("Categories", "GetAllCategory", "Category")</li>
+                        <li>@Html.ActionLink("Instructors", "GetAllInstructor", "Instructor")</li>
+                        <li>@Html.ActionLink("Users", "GetAllUser", "User")</li>
+                        <li>@Html.ActionLink("Profile", "ProfileDetails", "Profile")</li>
+                        <li>@Html.ActionLink("Logout", "LogOut", "Login")</li>
+                    }
+                    @if (Convert.ToInt32(@Session["Accountid"]) == 2)
+                    {
+                        <li>@Html.ActionLink("Home", "Welcome", "Login")</li>
+                        <li>@Html.ActionLink("Courses", "GetAllCourse", "Course")</li>
+                        <li>@Html.ActionLink("Users", "GetAllUser", "User")</li>
+                        <li>@Html.ActionLink("Profile", "ProfileDetails", "Profile")</li>
+                        <li>@Html.ActionLink("Logout", "LogOut", "Login")</li>
+                    }
+                    @if (Convert.ToInt32(@Session["Accountid"]) == 3)
+                    {
+                        <li>@Html.ActionLink("Home", "Welcome", "Login")</li>
+                        <li>@Html.ActionLink("Courses", "GetAllCourse", "Course")</li>
+                        <li>@Html.ActionLink("Profile", "ProfileDetails", "Profile")</li>
+                        <li>@Html.ActionLink("Logout", "LogOut", "Login")</li>
+                    }
                 </ul>
             </div>
         </div>

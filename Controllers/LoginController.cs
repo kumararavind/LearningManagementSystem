@@ -80,18 +80,7 @@ namespace LMSProfile.Controllers
                     FormsAuthentication.SetAuthCookie(ll.Email, true);
                     Session["UserId"] = sqd["userid"];
                     Session["Accountid"] = sqd["account_id"];
-                    if (Convert.ToInt32(Session["Accountid"]) == 1)
-                    {
-                        return RedirectToAction("Welcome", ll);
-                    }
-                    else if (Convert.ToInt32(Session["Accountid"])==2)
-                    {
-                        return RedirectToAction("ProfileDetails", "Profile",ll);
-                    }
-                    else if (Convert.ToInt32(Session["Accountid"]) == 3)
-                    {
-                        return RedirectToAction("Welcome", ll);
-                    }    
+                    return RedirectToAction("Welcome", ll);
                 }
                 else
                 {

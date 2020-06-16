@@ -81,7 +81,7 @@ namespace LMSProfile.Repository
 
 
         }
-        //To view category details with generic list     
+            
         public List<CourseModel> GetAllCourse()
         {
             connection();
@@ -93,8 +93,7 @@ namespace LMSProfile.Repository
             con.Open();
             com.ExecuteNonQuery();
             da.Fill(dt);
-            con.Close();
-            //Bind EmpModel generic list using dataRow     
+            con.Close();    
             foreach (DataRow dr in dt.Rows)
             {
 
@@ -116,7 +115,7 @@ namespace LMSProfile.Repository
 
             return CouList;
         }
-        //To Update Employee details    
+         
         public bool UpdateCourse(CourseModel obj)
         {
 

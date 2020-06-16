@@ -10,3 +10,41 @@ Course-->AddCourse-->Object reference not set to an instance of an object.	 at 6
 Login-->AddUsers-->Value cannot be null.
 Parameter name: items	 at 6/16/2020 1:11:25 PM
 -----------------------
+Login-->Index-->Unrecognized configuration section authentication. (E:\LearningManagementSystem(Git)\views\web.config line 43)	 at 6/16/2020 5:15:00 PM
+-----------------------
+Login-->Index-->Unrecognized configuration section authentication. (E:\LearningManagementSystem(Git)\views\web.config line 43)	 at 6/16/2020 5:15:48 PM
+-----------------------
+Login-->Index-->Unrecognized configuration section authentication. (E:\LearningManagementSystem(Git)\views\web.config line 43)	 at 6/16/2020 5:18:53 PM
+-----------------------
+Login-->Index-->Unrecognized configuration section authentication. (E:\LearningManagementSystem(Git)\views\web.config line 43)	 at 6/16/2020 5:19:14 PM
+-----------------------
+Login-->Index-->It is an error to use a section registered as allowDefinition='MachineToApplication' beyond application level.  This error can be caused by a virtual directory not being configured as an application in IIS. (E:\LearningManagementSystem(Git)\views\web.config line 42)	 at 6/16/2020 5:29:54 PM
+-----------------------
+Login-->Index-->It is an error to use a section registered as allowDefinition='MachineToApplication' beyond application level.  This error can be caused by a virtual directory not being configured as an application in IIS. (E:\LearningManagementSystem(Git)\views\web.config line 42)	 at 6/16/2020 5:30:24 PM
+-----------------------
+Login-->Index-->The Role Manager feature has not been enabled.	 at 6/16/2020 6:09:01 PM
+-----------------------
+Login-->Index-->Unable to connect to SQL Server database.	 at 6/16/2020 6:11:59 PM
+-----------------------
+Login-->Welcome-->Unable to connect to SQL Server database.	 at 6/16/2020 6:16:14 PM
+-----------------------
+Instructor-->DeleteInst-->The view 'DeleteInst' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Instructor/DeleteInst.aspx
+~/Views/Instructor/DeleteInst.ascx
+~/Views/Shared/DeleteInst.aspx
+~/Views/Shared/DeleteInst.ascx
+~/Views/Instructor/DeleteInst.cshtml
+~/Views/Instructor/DeleteInst.vbhtml
+~/Views/Shared/DeleteInst.cshtml
+~/Views/Shared/DeleteInst.vbhtml	 at 6/16/2020 9:39:09 PM
+-----------------------
+Instructor-->DeleteInst-->The view 'DeleteInst' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Instructor/DeleteInst.aspx
+~/Views/Instructor/DeleteInst.ascx
+~/Views/Shared/DeleteInst.aspx
+~/Views/Shared/DeleteInst.ascx
+~/Views/Instructor/DeleteInst.cshtml
+~/Views/Instructor/DeleteInst.vbhtml
+~/Views/Shared/DeleteInst.cshtml
+~/Views/Shared/DeleteInst.vbhtml	 at 6/16/2020 9:46:28 PM
+-----------------------
