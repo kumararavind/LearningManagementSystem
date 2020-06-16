@@ -8,11 +8,15 @@ namespace LMSProfile.Controllers
 {
     public class HomeController : Controller
     {
+
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public ActionResult Index()
         {
             return View();
         }
 
+
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page. before Login";
@@ -20,6 +24,8 @@ namespace LMSProfile.Controllers
             return View();
         }
 
+
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

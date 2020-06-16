@@ -34,7 +34,7 @@ namespace LMSProfile.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("Index", "Home");
             }
 
         }
@@ -44,18 +44,26 @@ namespace LMSProfile.Controllers
         [Route("ProfileDetails1")]
         public ActionResult ProfileDetails1(ProfileModel model) //used to update the profile page after clicking the update button in profile page.
         {
-            try
+            if (Session["UserId"] != null && Session["Accountid"] != null)
             {
-                ProfileRepo ProRepo = new ProfileRepo();
-                ProRepo.PostProfile(model, Session["Accountid"], Session["UserId"]);
-            }
-            catch (SqlException)
-            {
-                ViewBag.duplicatemessage = "Profile Updation Failed";
+                try
+                {
+                    ProfileRepo ProRepo = new ProfileRepo();
+                    ProRepo.PostProfile(model, Session["Accountid"], Session["UserId"]);
+                }
+                catch (SqlException)
+                {
+                    ViewBag.duplicatemessage = "Profile Updation Failed";
+                    return RedirectToAction("ProfileDetails", model);
+                }
+                ViewBag.Successmessage = "Profile Updated";
                 return RedirectToAction("ProfileDetails", model);
             }
-            ViewBag.Successmessage = "Profile Updated";
-            return RedirectToAction("ProfileDetails", model);
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
 
         }
     }
