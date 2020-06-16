@@ -20,34 +20,34 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Learning App", "Welcome", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Learning App", "Home", "Index", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @if (Convert.ToInt32(@Session["Accountid"]) == 1)
                     {
-                        <li>@Html.ActionLink("Home", "Welcome", "Login")</li>
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("Courses", "GetAllCourse", "Course")</li>
                         <li>@Html.ActionLink("Categories", "GetAllCategory", "Category")</li>
                         <li>@Html.ActionLink("Instructors", "GetAllInstructor", "Instructor")</li>
                         <li>@Html.ActionLink("Users", "GetAllUser", "User")</li>
                         <li>@Html.ActionLink("Profile", "ProfileDetails", "Profile")</li>
-                        <li>@Html.ActionLink("Logout", "LogOut", "Login")</li>
+                        <li>@Html.ActionLink("Logout", "Index", "Home")</li>
                     }
                     @if (Convert.ToInt32(@Session["Accountid"]) == 2)
                     {
-                        <li>@Html.ActionLink("Home", "Welcome", "Login")</li>
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("Courses", "GetAllCourse", "Course")</li>
                         <li>@Html.ActionLink("Users", "GetAllUser", "User")</li>
                         <li>@Html.ActionLink("Profile", "ProfileDetails", "Profile")</li>
-                        <li>@Html.ActionLink("Logout", "LogOut", "Login")</li>
+                        <li>@Html.ActionLink("Logout", "Index", "Home")</li>
                     }
                     @if (Convert.ToInt32(@Session["Accountid"]) == 3)
                     {
-                        <li>@Html.ActionLink("Home", "Welcome", "Login")</li>
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("Courses", "GetAllCourse", "Course")</li>
                         <li>@Html.ActionLink("Profile", "ProfileDetails", "Profile")</li>
-                        <li>@Html.ActionLink("Logout", "LogOut", "Login")</li>
+                        <li>@Html.ActionLink("Logout", "Index", "Home")</li>
                     }
                 </ul>
             </div>
