@@ -5,8 +5,7 @@
     Layout = "~/Views/Shared/AfterLoginView.cshtml";
 }
 
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("AddCategory","Category",FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 

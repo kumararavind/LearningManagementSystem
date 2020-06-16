@@ -1,4 +1,5 @@
-﻿using LMSProfile.Models;
+﻿using LMSProfile.ExceptionLogger;
+using LMSProfile.Models;
 using LMSProfile.Repository;
 using System;
 using System.Collections.Generic;
@@ -13,39 +14,8 @@ namespace LMSProfile.Controllers
 {
     public class CourseController : Controller
     {
-        private CourseModel model;
-        private void dropdown()
-        {
-            if (Session["UserId"] != null && Session["Accountid"] != null)
-            {
-                string constr = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString.ToString();
-                SqlConnection con = new SqlConnection(constr);
-                model = new CourseModel();
-                con.Open();
-                using (SqlCommand cmd1 = new SqlCommand("SELECT cat_id,cat_name FROM Category_Details", con))
-                {
 
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd1);
-                    da.Fill(ds);
-                    List<CourseModel> category = new List<CourseModel>();
-                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                    {
-                        CourseModel uobj = new CourseModel();
-                        uobj.catId = Convert.ToInt32(ds.Tables[0].Rows[i]["cat_id"].ToString());
-                        uobj.categoryName = ds.Tables[0].Rows[i]["cat_name"].ToString();
-                        category.Add(uobj);
-                    }
-                    model.CategoryList = category;
-                }
-                con.Close();
-            }
-            else
-            {
-                ViewBag.text = "Error While Loading Drodown";
-            }
-            
-        }
+        [LogExceptions]
         public ActionResult GetAllCourse()
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)
@@ -60,11 +30,14 @@ namespace LMSProfile.Controllers
             }
             
         }
+
+        [LogExceptions]
         public ActionResult AddCourse()
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)
             {
-                dropdown();
+                CourseRepo cour = new CourseRepo();
+                CourseModel model=cour.dropdownrepo();
                 return View(model);
             }
             else
@@ -75,6 +48,7 @@ namespace LMSProfile.Controllers
         }
 
         [HttpPost]
+        [LogExceptions]
         public ActionResult AddCourse(CourseModel model,FormCollection form)
         {
             try
@@ -94,7 +68,8 @@ namespace LMSProfile.Controllers
                 return View();
             }
         }
-            
+
+        [LogExceptions]
         public ActionResult EditCouDetails(int id)
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)
@@ -109,6 +84,7 @@ namespace LMSProfile.Controllers
         }
    
         [HttpPost]
+        [LogExceptions]
         public ActionResult EditCouDetails(int id, CourseModel obj)
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)
@@ -132,7 +108,8 @@ namespace LMSProfile.Controllers
             }
             
         }
-   
+
+        [LogExceptions]
         public ActionResult DeleteCou(int id)
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)

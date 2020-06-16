@@ -124,6 +124,8 @@
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="ExceptionLogger\LogExceptions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -135,12 +137,14 @@
     <Compile Include="Repository\CategoryRepo.cs" />
     <Compile Include="Repository\CourseRepo.cs" />
     <Compile Include="Repository\LoginRepo.cs" />
+    <Compile Include="Repository\ProfileRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="ExceptionData\Data.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -183,6 +187,7 @@
     <Content Include="Views\Course\AddCourse.cshtml" />
     <Content Include="Views\Course\EditCouDetails.cshtml" />
     <Content Include="Views\Course\GetAllCourse.cshtml" />
+    <Content Include="Views\Profile\ProfileDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

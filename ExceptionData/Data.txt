@@ -1,0 +1,12 @@
+﻿
+Login-->GetDetails-->Value was either too large or too small for an Int32.	 at 6/15/2020 7:16:23 PM
+-----------------------
+Profile-->ProfileDetails-->There is already an open DataReader associated with this Command which must be closed first.	 at 6/15/2020 8:31:47 PM
+-----------------------
+Profile-->ProfileDetails-->The connection was not closed. The connection's current state is open.	 at 6/15/2020 9:08:15 PM
+-----------------------
+Course-->AddCourse-->Object reference not set to an instance of an object.	 at 6/16/2020 11:44:24 AM
+-----------------------
+Login-->AddUsers-->Value cannot be null.
+Parameter name: items	 at 6/16/2020 1:11:25 PM
+-----------------------

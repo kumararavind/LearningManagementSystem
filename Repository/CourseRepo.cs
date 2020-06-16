@@ -14,6 +14,7 @@ namespace LMSProfile.Repository
     {
         private SqlConnection con;
         private SqlCommand com;
+        private CourseModel model;
         //To Handle connection related activities    
         private void connection()
         {
@@ -22,6 +23,31 @@ namespace LMSProfile.Repository
             com = new SqlCommand("SP_CRUD_Course", con);
             com.CommandType = CommandType.StoredProcedure;
 
+        }
+
+        public CourseModel dropdownrepo()
+        {
+            model = new CourseModel();
+            connection();
+            con.Open();
+            using (SqlCommand cmd1 = new SqlCommand("SELECT cat_id,cat_name FROM Category_Details", con))
+            {
+
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd1);
+                da.Fill(ds);
+                List<CourseModel> category = new List<CourseModel>();
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    CourseModel uobj = new CourseModel();
+                    uobj.catId = Convert.ToInt32(ds.Tables[0].Rows[i]["cat_id"].ToString());
+                    uobj.categoryName = ds.Tables[0].Rows[i]["cat_name"].ToString();
+                    category.Add(uobj);
+                }
+                model.CategoryList = category;
+            }
+            con.Close();
+            return model;
         }
 
         public bool AddCourse(CourseModel obj,FormCollection form)

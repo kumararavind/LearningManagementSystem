@@ -1,4 +1,5 @@
-﻿using LMSProfile.Models;
+﻿using LMSProfile.ExceptionLogger;
+using LMSProfile.Models;
 using LMSProfile.Repository;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,8 @@ namespace LMSProfile.Controllers
 {
     public class CategoryController : Controller
     {
-        
 
+        [LogExceptions]
         public ActionResult GetAllCategory()
         {
             if(Session["UserId"] != null && Session["Accountid"] != null)
@@ -26,11 +27,15 @@ namespace LMSProfile.Controllers
             }
             
         }
+
+        [LogExceptions]
         public ActionResult AddCategory()
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)
             {
-                return View();
+                CategoryModel model = new CategoryModel();
+                
+                return View(model);
             }
             else
             {
@@ -40,6 +45,7 @@ namespace LMSProfile.Controllers
         }
 
         [HttpPost]
+        [LogExceptions]
         public ActionResult AddCategory(CategoryModel model)
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)
@@ -56,12 +62,12 @@ namespace LMSProfile.Controllers
                         }
                     }
 
-                    return View();
+                    return View(model);
                 }
                 catch
                 {
                     ViewBag.Message = "Category details Addition Failed";
-                    return View();
+                    return View(model);
                 }
             }
             else
@@ -69,7 +75,9 @@ namespace LMSProfile.Controllers
                 return RedirectToAction("Index", "Login");
             }
             
-        }  
+        }
+
+        [LogExceptions]
         public ActionResult EditCatDetails(int id)
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)
@@ -84,6 +92,7 @@ namespace LMSProfile.Controllers
         }
    
         [HttpPost]
+        [LogExceptions]
         public ActionResult EditCatDetails(int id, CategoryModel obj)
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)
@@ -106,7 +115,9 @@ namespace LMSProfile.Controllers
                 return RedirectToAction("Index", "Login");
             }
             
-        } 
+        }
+
+        [LogExceptions]
         public ActionResult DeleteCat(int id)
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)
