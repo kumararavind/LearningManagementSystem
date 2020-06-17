@@ -42,6 +42,7 @@ namespace LMSProfile.Controllers
         [HttpPost]
         [LogExceptions]
         [Route("ProfileDetails1")]
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public ActionResult ProfileDetails1(ProfileModel model) //used to update the profile page after clicking the update button in profile page.
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)
