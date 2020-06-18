@@ -146,7 +146,6 @@ namespace LMSProfile.Repository
         } 
         public bool DeleteCourse(int Id)
         {
-
             connection();
             com.Parameters.AddWithValue("@course_id", Id);
             com.Parameters.AddWithValue("@status", "Delete");

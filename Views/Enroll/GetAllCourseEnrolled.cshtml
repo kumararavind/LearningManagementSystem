@@ -1,0 +1,62 @@
+﻿@model IEnumerable<LMSProfile.Models.EnrollModel>
+
+@{
+    ViewBag.Title = "GetAllCourseEnrolled";
+    Layout = "~/Views/Shared/AfterLoginView.cshtml";
+}
+
+<h2>Enrolled Courses</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.catName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.instructorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.enrollmentStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.courseName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.catName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.instructorName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.userName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.enrollmentStatus)
+    </td>
+    @if (Convert.ToInt32(@Session["Accountid"]) == 1 || Convert.ToInt32(@Session["Accountid"]) == 2)
+    {
+        <td>
+            @Html.ActionLink("Update", "UpdateEnrollment", new { id = item.Id }) |@Html.ActionLink("Delete", "DeleteEnroll", new { id = item.Id })
+        </td>
+    }
+    </tr>
+}
+
+</table>

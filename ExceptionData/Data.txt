@@ -52,3 +52,34 @@ Login-->Index-->Object reference not set to an instance of an object.	 at 6/16/2
 -----------------------
 Login-->Index-->Object reference not set to an instance of an object.	 at 6/16/2020 10:32:54 PM
 -----------------------
+Enroll-->AddEnrollDetails-->The view 'AddEnrollDetails' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Enroll/AddEnrollDetails.aspx
+~/Views/Enroll/AddEnrollDetails.ascx
+~/Views/Shared/AddEnrollDetails.aspx
+~/Views/Shared/AddEnrollDetails.ascx
+~/Views/Enroll/AddEnrollDetails.cshtml
+~/Views/Enroll/AddEnrollDetails.vbhtml
+~/Views/Shared/AddEnrollDetails.cshtml
+~/Views/Shared/AddEnrollDetails.vbhtml	 at 6/18/2020 3:17:27 PM
+-----------------------
+Enroll-->AddEnrollDetails-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult AddEnrollDetails(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 6/18/2020 3:26:10 PM
+-----------------------
+Enroll-->GetAllCourseEnrolled-->Input string was not in a correct format.	 at 6/18/2020 4:50:46 PM
+-----------------------
+Enroll-->GetAllCourseEnrolled-->Input string was not in a correct format.	 at 6/18/2020 4:58:22 PM
+-----------------------
+Enroll-->UpdateEnrollment-->There is no row at position 3.	 at 6/18/2020 6:23:43 PM
+-----------------------
+Enroll-->UpdateEnrollment-->E:\LearningManagementSystem(Git)\Views\Enroll\UpdateEnrollment.cshtml(21): error CS1012: Too many characters in character literal	 at 6/18/2020 6:27:32 PM
+-----------------------
+Enroll-->DeleteEnroll-->The view 'DeleteEnroll' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Enroll/DeleteEnroll.aspx
+~/Views/Enroll/DeleteEnroll.ascx
+~/Views/Shared/DeleteEnroll.aspx
+~/Views/Shared/DeleteEnroll.ascx
+~/Views/Enroll/DeleteEnroll.cshtml
+~/Views/Enroll/DeleteEnroll.vbhtml
+~/Views/Shared/DeleteEnroll.cshtml
+~/Views/Shared/DeleteEnroll.vbhtml	 at 6/18/2020 7:06:28 PM
+-----------------------

@@ -59,8 +59,7 @@ namespace LMSProfile.Repository
             con.Open();
             com.ExecuteNonQuery();
             da.Fill(dt);
-            con.Close();
-            //Bind EmpModel generic list using dataRow     
+            con.Close();    
             foreach (DataRow dr in dt.Rows)
             {
 
@@ -75,8 +74,7 @@ namespace LMSProfile.Repository
             }
 
             return CatList;
-        }
-        //To Update Employee details    
+        }  
         public bool UpdateCategory(CategoryModel obj)
         {
 
@@ -101,8 +99,7 @@ namespace LMSProfile.Repository
             }
 
 
-        }
-        //To delete Employee details    
+        }  
         public bool DeleteCategory(int Id)
         {
 

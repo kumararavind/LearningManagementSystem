@@ -1,0 +1,47 @@
+﻿@model IEnumerable<LMSProfile.Models.EnrollModel>
+
+@{
+    ViewBag.Title = "GetAllCourseEnroll";
+    Layout = "~/Views/Shared/AfterLoginView.cshtml";
+}
+
+<h2>List of Courses You Can Enroll</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.courseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.catId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.instructorId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.courseId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.courseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.catId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.instructorId)
+        </td>
+        <td>
+            @Html.ActionLink("Enroll", "AddEnrollDetails", new { id=item.courseId })
+        </td>
+    </tr>
+}
+
+</table>
