@@ -482,7 +482,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\AfterLoginView.cshtml" />
     <Content Include="Views\Login\Welcome.cshtml" />
-    <Content Include="Views\Login\GetDetails.cshtml" />
     <Content Include="Views\Login\AddUsers.cshtml" />
     <Content Include="Views\Category\GetAllCategory.cshtml" />
     <Content Include="Views\Category\AddCategory.cshtml" />

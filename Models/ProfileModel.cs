@@ -20,14 +20,19 @@ namespace LMSProfile.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Contact is required")]
+        [RegularExpression(@"^(\d{10})$", ErrorMessage = "Wrong mobile")]
         public Int64 Contact { get; set; }
         [DisplayName("Birth date")]
         [Required(ErrorMessage = "Date of birth is required")]
         [DataType(DataType.Date)]
         public string DateOfBirth { get; set; }
 
+        [DisplayName("Gender")]
+        [Required(ErrorMessage = "Gender is required")]
         public string Gender { get; set; }
 
+        [DisplayName("Address")]
+        [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; }
 
         [Required(ErrorMessage = "Password is required")]

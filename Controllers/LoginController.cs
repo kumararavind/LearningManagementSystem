@@ -130,7 +130,7 @@ namespace LMSProfile.Controllers
             {
                 LoginRepo Lr = new LoginRepo();
                 ProfileModel model1 = Lr.dropdownrepo1();
-                return View("AddUsers", model1);
+                return View(model1);
             }
             catch (SqlException)
             {
