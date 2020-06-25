@@ -1,5 +1,8 @@
 ﻿using LMSProfile.ExceptionLogger;
-using LMSProfile.Repository;
+//using LMSProfile.Models;
+//using LMSProfile.Repository;
+using DataAccess;
+using Business;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;

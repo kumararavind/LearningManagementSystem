@@ -1,4 +1,4 @@
-﻿using LMSProfile.Models;
+﻿//using LMSProfile.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,8 +7,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Business;
 
-namespace LMSProfile.Repository
+namespace DataAccess
 {
     public class CourseRepo
     {
@@ -50,7 +51,7 @@ namespace LMSProfile.Repository
             return model;
         }
 
-        public bool AddCourse(CourseModel obj,FormCollection form)
+        public bool AddCourse(CourseModel obj, FormCollection form)
         {
 
             connection();
@@ -81,7 +82,7 @@ namespace LMSProfile.Repository
 
 
         }
-            
+
         public List<CourseModel> GetAllCourse()
         {
             connection();
@@ -93,7 +94,7 @@ namespace LMSProfile.Repository
             con.Open();
             com.ExecuteNonQuery();
             da.Fill(dt);
-            con.Close();    
+            con.Close();
             foreach (DataRow dr in dt.Rows)
             {
 
@@ -103,7 +104,7 @@ namespace LMSProfile.Repository
                         courseId = Convert.ToInt32(dr["course_id"]),
                         courseName = Convert.ToString(dr["course_name"]),
                         courseLength = Convert.ToInt32(dr["course_length_hrs"]),
-                        catId=Convert.ToInt32(dr["course_category_id"]),
+                        catId = Convert.ToInt32(dr["course_category_id"]),
                         courseTech = Convert.ToString(dr["course_tech"]),
                         courseDesc = Convert.ToString(dr["course_desc"]),
                         courseStartDate = Convert.ToDateTime(dr["course_startdate"]),
@@ -115,7 +116,7 @@ namespace LMSProfile.Repository
 
             return CouList;
         }
-         
+
         public bool UpdateCourse(CourseModel obj)
         {
 
@@ -130,7 +131,7 @@ namespace LMSProfile.Repository
             con.Open();
             int i = com.ExecuteNonQuery();
             con.Close();
-            if (i <0)
+            if (i < 0)
             {
 
                 return true;
@@ -143,7 +144,7 @@ namespace LMSProfile.Repository
             }
 
 
-        } 
+        }
         public bool DeleteCourse(int Id)
         {
             connection();

@@ -1,4 +1,4 @@
-﻿using LMSProfile.Models;
+﻿//using LMSProfile.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -6,8 +6,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using Business;
 
-namespace LMSProfile.Repository
+namespace DataAccess
 {
     public class ProfileRepo
     {
@@ -23,9 +24,9 @@ namespace LMSProfile.Repository
 
         }
 
-        public ProfileModel GetProfile(ProfileModel model,object s1,object s2)
+        public ProfileModel GetProfile(ProfileModel model, object s1, object s2)
         {
-                
+
             connection();
             com.Parameters.AddWithValue("@status", "GET");
             com.Parameters.AddWithValue("@accountid", s1);
@@ -49,13 +50,13 @@ namespace LMSProfile.Repository
 
         public ProfileModel PostProfile(ProfileModel model, object s1, object s2)
         {
-            
+
             connection();
             com.Parameters.AddWithValue("@status", "UPDATE");
             com.Parameters.AddWithValue("@ph_no", model.Contact);
             com.Parameters.AddWithValue("@address", model.Address);
-            com.Parameters.AddWithValue("@accountid",s1);
-            com.Parameters.AddWithValue("@userid",s2);
+            com.Parameters.AddWithValue("@accountid", s1);
+            com.Parameters.AddWithValue("@userid", s2);
             con.Open();
             com.ExecuteNonQuery();
             con.Close();

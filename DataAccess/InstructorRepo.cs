@@ -1,4 +1,4 @@
-﻿using LMSProfile.Models;
+﻿//using LMSProfile.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -6,8 +6,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using Business;
 
-namespace LMSProfile.Repository
+namespace DataAccess
 {
     public class InstructorRepo
     {
@@ -35,7 +36,7 @@ namespace LMSProfile.Repository
             con.Open();
             com.ExecuteNonQuery();
             da.Fill(dt);
-            con.Close();   
+            con.Close();
             foreach (DataRow dr in dt.Rows)
             {
 

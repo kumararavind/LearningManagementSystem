@@ -1,4 +1,4 @@
-﻿using LMSProfile.Models;
+﻿//using LMSProfile.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,15 +7,16 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Business;
 
-namespace LMSProfile.Repository
+namespace DataAccess
 {
     public class EnrollRepo
     {
         private SqlConnection con;
         private SqlCommand cmd;
         private EnrollModel model;
-        
+
         private void connection()
         {
             string connect = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString.ToString();
@@ -39,21 +40,21 @@ namespace LMSProfile.Repository
                 con.Close();
                 foreach (DataRow dr in dt.Rows)
                 {
-                EnrollList.Add(
-                    new EnrollModel
-                    {
-                        courseId = Convert.ToInt32(dr["course_id"]),
-                        catId = Convert.ToInt32(dr["course_category_id"]),
-                        courseName = Convert.ToString(dr["course_name"]),
-                        instructorId = Convert.ToInt32(dr["course_instructor_id"])
-                    }
-                    );
+                    EnrollList.Add(
+                        new EnrollModel
+                        {
+                            courseId = Convert.ToInt32(dr["course_id"]),
+                            catId = Convert.ToInt32(dr["course_category_id"]),
+                            courseName = Convert.ToString(dr["course_name"]),
+                            instructorId = Convert.ToInt32(dr["course_instructor_id"])
+                        }
+                        );
                 }
             }
 
             return EnrollList;
         }
-        public bool AddEnrollRepo(EnrollModel obj,object s1)
+        public bool AddEnrollRepo(EnrollModel obj, object s1)
         {
 
             connection();
@@ -61,7 +62,7 @@ namespace LMSProfile.Repository
             cmd.Parameters.AddWithValue("@courseid", obj.courseId);
             cmd.Parameters.AddWithValue("@instructorid", obj.instructorId);
             cmd.Parameters.AddWithValue("@userid", s1);
-            cmd.Parameters.AddWithValue("@enrollmentid",1);
+            cmd.Parameters.AddWithValue("@enrollmentid", 1);
             cmd.Parameters.AddWithValue("@status", "Create");
             con.Open();
             int i = cmd.ExecuteNonQuery();
@@ -81,11 +82,11 @@ namespace LMSProfile.Repository
 
         }
 
-        public List<EnrollModel> GetAllCourseEnrolledRepo(object s1,object s2)
+        public List<EnrollModel> GetAllCourseEnrolledRepo(object s1, object s2)
         {
             connection();
             cmd.Parameters.AddWithValue("@accountid", s1);
-            cmd.Parameters.AddWithValue("@userid",s2);
+            cmd.Parameters.AddWithValue("@userid", s2);
             cmd.Parameters.AddWithValue("@status", "Read");
             List<EnrollModel> EnrollList1 = new List<EnrollModel>();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -138,7 +139,7 @@ namespace LMSProfile.Repository
             return model;
         }
 
-        public bool UpdateEnrolledRepo(EnrollModel obj, object s1,FormCollection form)
+        public bool UpdateEnrolledRepo(EnrollModel obj, object s1, FormCollection form)
         {
 
             connection();
@@ -165,7 +166,7 @@ namespace LMSProfile.Repository
 
         }
 
-        public bool DeleteEnrollment(int Id,object s1)
+        public bool DeleteEnrollment(int Id, object s1)
         {
             connection();
             cmd.Parameters.AddWithValue("@id", Id);

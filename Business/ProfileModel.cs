@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace LMSProfile.Models
+namespace Business
 {
     public class ProfileModel
     {

@@ -1,4 +1,4 @@
-﻿using LMSProfile.Models;
+﻿//using LMSProfile.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,8 +7,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Business;
 
-namespace LMSProfile.Repository
+namespace DataAccess
 {
     public class LoginRepo
     {
@@ -89,7 +90,7 @@ namespace LMSProfile.Repository
                 cmd.Parameters.AddWithValue("@address", model.Address);
                 cmd.Parameters.AddWithValue("@password", model.Password);
                 cmd.Parameters.AddWithValue("@accountid", accountid);
-                cmd.Parameters.AddWithValue("@status","Create");
+                cmd.Parameters.AddWithValue("@status", "Create");
                 int i = cmd.ExecuteNonQuery();
                 con.Close();
                 if (i < 0)

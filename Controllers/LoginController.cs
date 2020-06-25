@@ -5,14 +5,16 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlClient;
 using System.Data;
-using LMSProfile.Models;
 using System.Security;
 using System.Web.Security;
 using System.Web.Services.Description;
 using System.Linq.Expressions;
 using System.Configuration;
+//using LMSProfile.Models;
+//using LMSProfile.Repository;
+using DataAccess;
+using Business;
 using LMSProfile.ExceptionLogger;
-using LMSProfile.Repository;
 
 namespace LMSProfile.Controllers
 {

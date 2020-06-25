@@ -1,20 +1,21 @@
-﻿using LMSProfile.Models;
+﻿//using LMSProfile.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Data.SqlClient;
+using Business;
 
-namespace LMSProfile.Repository
+namespace DataAccess
 {
     public class CategoryRepo
     {
-        private SqlConnection con;
-        private SqlCommand com;
+        public SqlConnection con;
+        public SqlCommand com;
         //To Handle connection related activities    
-        private void connection()
+        public void connection()
         {
             string constr = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString.ToString();
             con = new SqlConnection(constr);
@@ -59,7 +60,7 @@ namespace LMSProfile.Repository
             con.Open();
             com.ExecuteNonQuery();
             da.Fill(dt);
-            con.Close();    
+            con.Close();
             foreach (DataRow dr in dt.Rows)
             {
 
@@ -74,7 +75,7 @@ namespace LMSProfile.Repository
             }
 
             return CatList;
-        }  
+        }
         public bool UpdateCategory(CategoryModel obj)
         {
 
@@ -99,7 +100,7 @@ namespace LMSProfile.Repository
             }
 
 
-        }  
+        }
         public bool DeleteCategory(int Id)
         {
 
