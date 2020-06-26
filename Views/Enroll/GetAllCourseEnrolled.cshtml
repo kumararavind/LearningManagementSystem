@@ -7,56 +7,89 @@
 
 <h2>Enrolled Courses</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.courseName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.catName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.instructorName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.userName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.enrollmentStatus)
-        </th>
-        <th></th>
-    </tr>
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.courseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.catName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.instructorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.enrollmentStatus)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Id)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.courseName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.catName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.instructorName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.userName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.enrollmentStatus)
-    </td>
-    @if (Convert.ToInt32(@Session["Accountid"]) == 1 || Convert.ToInt32(@Session["Accountid"]) == 2)
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.courseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.catName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.instructorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.enrollmentStatus)
+                </td>
+                @if (Convert.ToInt32(@Session["Accountid"]) == 1 || Convert.ToInt32(@Session["Accountid"]) == 2)
+                {
+                    <td>
+                        @Html.ActionLink("Update", "UpdateEnrollment", new { id = item.Id }) |@Html.ActionLink("Delete", "DeleteEnroll", new { id = item.Id })
+                    </td>
+                }
+            </tr>
+        }
+
+    </table>*@
+<hr />
+<div class="row">
+    @foreach (var item in Model)
     {
-        <td>
-            @Html.ActionLink("Update", "UpdateEnrollment", new { id = item.Id }) |@Html.ActionLink("Delete", "DeleteEnroll", new { id = item.Id })
-        </td>
-    }
-    </tr>
-}
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="\Images\CourseEnrollThumbnail.jpg" alt="...">
+                <div class="caption">
+                    <h3><b>@Html.DisplayNameFor(model => model.courseName):</b> @Html.DisplayFor(modelItem => item.courseName)</h3>
+                    <p><b>@Html.DisplayNameFor(model => model.Id):</b> @Html.DisplayFor(modelItem => item.Id)</p>
+                    <p><b>@Html.DisplayNameFor(model => model.catName):</b> @Html.DisplayFor(modelItem => item.catName)</p>
+                    <p><b>@Html.DisplayNameFor(model => model.instructorName):</b> @Html.DisplayFor(modelItem => item.instructorName)</p>
+                    <p><b>@Html.DisplayNameFor(model => model.enrollmentStatus):</b> @Html.DisplayFor(modelItem => item.enrollmentStatus)</p>
+                    @if (Convert.ToInt32(@Session["Accountid"]) == 1 || Convert.ToInt32(@Session["Accountid"]) == 2)
+                    {
+                        <p>@Html.ActionLink("Update", "UpdateEnrollment", new { id = item.Id }) |@Html.ActionLink("Delete", "DeleteEnroll", new { id = item.Id })</p>
+                    }
+                </div>
+            </div>
+        </div>
 
-</table>
+    }
+</div>
+
+<br />
+<!-- 16:9 aspect ratio -->
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe width="480" height="270" src="https://www.youtube.com/embed/videoseries?list=PL6n9fhu94yhVm6S8I2xd6nYz2ZORd7X2v" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+

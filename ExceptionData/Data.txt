@@ -107,3 +107,5 @@ Category-->GetAllCategory-->Could not load file or assembly 'System.Configuratio
 -----------------------
 Login-->Index-->Could not load file or assembly 'System.Configuration.ConfigurationManager, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51' or one of its dependencies. The system cannot find the file specified.	 at 6/25/2020 3:04:15 PM
 -----------------------
+Login-->Welcome-->The file "~/Views/Login/Welcome.cshtml" cannot be requested directly because it calls the "RenderSection" method.	 at 6/26/2020 2:17:44 PM
+-----------------------

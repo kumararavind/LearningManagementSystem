@@ -106,7 +106,7 @@ namespace DataAccess
                         catName = Convert.ToString(dr["category_name"]),
                         instructorName = Convert.ToString(dr["instructor_name"]),
                         userName = Convert.ToString(dr["user_name"]),
-                        enrollmentStatus = Convert.ToInt32(dr["enrollment_status"])
+                        enrollmentStatus = Convert.ToString(dr["enrollment_status"])
                     }
                     );
             }

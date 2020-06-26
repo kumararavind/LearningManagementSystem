@@ -36,7 +36,7 @@ namespace Business
         public string userName { get; set; }
 
         [DisplayName("Enrollment Status")]
-        public int enrollmentStatus { get; set; }
+        public string enrollmentStatus { get; set; }
 
         [DisplayName("Enrollment Type")]
         public string enrollmentType { get; set; }
