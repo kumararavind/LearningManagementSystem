@@ -109,3 +109,21 @@ Login-->Index-->Could not load file or assembly 'System.Configuration.Configurat
 -----------------------
 Login-->Welcome-->The file "~/Views/Login/Welcome.cshtml" cannot be requested directly because it calls the "RenderSection" method.	 at 6/26/2020 2:17:44 PM
 -----------------------
+Enroll-->GetAllCourseEnrolled-->E:\LearningManagementSystem(Git)\Views\Enroll\GetAllCourseEnrolled.cshtml(88): error CS1525: Invalid expression term '<'	 at 6/29/2020 3:47:25 PM
+-----------------------
+Enroll-->EnrolledVideo-->E:\LearningManagementSystem(Git)\Views\Enroll\EnrolledVideo.cshtml(8): error CS0103: The name 'item' does not exist in the current context	 at 6/29/2020 4:33:11 PM
+-----------------------
+Enroll-->EnrolledVideo-->The model item passed into the dictionary is of type 'Business.EnrollModel', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[Business.EnrollModel]'.	 at 6/29/2020 5:16:24 PM
+-----------------------
+Enroll-->EnrolledVideo-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EnrolledVideo(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 6/29/2020 5:33:43 PM
+-----------------------
+Enroll-->EnrolledVideo-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EnrolledVideo(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 6/29/2020 5:36:38 PM
+-----------------------
+Enroll-->EnrolledVideo-->The foreach block is missing a closing "}" character.  Make sure you have a matching "}" character for all the "{" characters within this block, and that none of the "}" characters are being interpreted as markup.
+	 at 6/29/2020 5:48:01 PM
+-----------------------
+Enroll-->EnrolledVideo-->The foreach block is missing a closing "}" character.  Make sure you have a matching "}" character for all the "{" characters within this block, and that none of the "}" characters are being interpreted as markup.
+	 at 6/29/2020 5:48:43 PM
+-----------------------

@@ -153,5 +153,26 @@ namespace LMSProfile.Controllers
             }
 
         }
+
+
+        [Route("EnrolledVideo")]
+        [LogExceptions]
+        public ActionResult EnrolledVideo(int id)
+        {
+
+            try
+            {
+                EnrollRepo Lr = new EnrollRepo();
+                return View("EnrolledVideo", Lr.EnrolledVideosRepo(id));
+
+            }
+            catch (SqlException)
+            {
+                ViewBag.duplicatemessage = "SQl Error";
+                return RedirectToAction("GetAllCourseEnrolled");
+            }
+
+        }
+
     }
 }

@@ -29,6 +29,9 @@ namespace Business
         [DisplayName("Course End Date")]
         public DateTime courseEndDate { get; set; }
 
+        [DisplayName("Video Link")]
+        public string CourseVideoLink { get; set; }
+
         [DisplayName("Course Instructor Id")]
         public int courseInstructorId { get; set; }
 

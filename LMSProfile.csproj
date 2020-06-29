@@ -530,6 +530,7 @@
     <Content Include="Views\Enroll\AddEnrollDetails.cshtml" />
     <Content Include="Views\Enroll\GetAllCourseEnrolled.cshtml" />
     <Content Include="Views\Enroll\UpdateEnrollment.cshtml" />
+    <Content Include="Views\Enroll\EnrolledVideo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\LearningManagementSystem%28Git%29\v16\" />

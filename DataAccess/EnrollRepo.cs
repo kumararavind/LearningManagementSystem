@@ -190,5 +190,32 @@ namespace DataAccess
 
 
         }
+
+        public List<EnrollModel> EnrolledVideosRepo(int id)
+        {
+
+            connection();
+            cmd.Parameters.AddWithValue("@id",id);
+            cmd.Parameters.AddWithValue("@status", "WatchVideo");
+            List<EnrollModel> EnrollList1 = new List<EnrollModel>();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            da.Fill(dt);
+            con.Close();
+            foreach (DataRow dr in dt.Rows)
+            {
+                EnrollList1.Add(
+                    new EnrollModel
+                    {
+                        courseName=Convert.ToString(dr["course_name"]),
+                        CourseVideoLink = Convert.ToString(dr["course_video_link"])
+                    }
+                    );
+            }
+            return EnrollList1;
+        }
     }
 }

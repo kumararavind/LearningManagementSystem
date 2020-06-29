@@ -13,79 +13,7 @@
     </p>
 }
 <hr />
-@*<table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.courseId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.courseName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.courseLength)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.courseDesc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.courseTech)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.courseStartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.courseEndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.catId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.courseInstructorId)
-            </th>
-            <th></th>
-        </tr>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.courseId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.courseName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.courseLength)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.courseDesc)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.courseTech)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.courseStartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.courseEndDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.catId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.courseInstructorId)
-                </td>
-                @if (Convert.ToInt32(@Session["Accountid"]) == 1 || Convert.ToInt32(@Session["Accountid"]) == 2)
-                {
-                    <td>
-                        @Html.ActionLink("Edit", "EditCouDetails", new { id = item.courseId }) |
-                        @Html.ActionLink("Delete", "DeleteCou", new { id = item.courseId }, new { onclick = "return confirm('Are sure wants to delete?');" })
-                    </td>
-                }
-            </tr>
-        }
-
-    </table>*@
 <div class="row">
     @foreach (var item in Model)
     {
@@ -100,6 +28,7 @@
                     <p><b>@Html.DisplayNameFor(model => model.courseTech):</b> @Html.DisplayFor(modelItem => item.courseTech)</p>
                     <p><b>@Html.DisplayNameFor(model => model.courseStartDate):</b> @Html.DisplayFor(modelItem => item.courseStartDate)</p>
                     <p><b>@Html.DisplayNameFor(model => model.courseEndDate):</b> @Html.DisplayFor(modelItem => item.courseEndDate)</p>
+                    <p><b>@Html.DisplayNameFor(model => model.CourseVideoLink):</b> @Html.DisplayFor(modelItem => item.CourseVideoLink)</p>
                     <p><b>@Html.DisplayNameFor(model => model.catId):</b> @Html.DisplayFor(modelItem => item.catId)</p>
                     <p><b>@Html.DisplayNameFor(model => model.courseInstructorId):</b> @Html.DisplayFor(modelItem => item.courseInstructorId)</p>
                     @if (Convert.ToInt32(@Session["Accountid"]) == 1 || Convert.ToInt32(@Session["Accountid"]) == 2)

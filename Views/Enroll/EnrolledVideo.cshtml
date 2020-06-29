@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Business.EnrollModel>
+
+@{
+    ViewBag.Title = "EnrolledVideo";
+    Layout = "~/Views/Shared/AfterLoginView.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <h3><b>@Html.DisplayNameFor(model => model.courseName):</b> @Html.DisplayFor(modelItem => item.courseName)</h3>
+    <hr/>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe width="480" height="270" src="@System.Convert.ToString(@item.CourseVideoLink)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+}

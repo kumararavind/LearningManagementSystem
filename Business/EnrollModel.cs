@@ -38,6 +38,9 @@ namespace Business
         [DisplayName("Enrollment Status")]
         public string enrollmentStatus { get; set; }
 
+        [DisplayName("Video Link")]
+        public string CourseVideoLink { get; set; }
+
         [DisplayName("Enrollment Type")]
         public string enrollmentType { get; set; }
 
