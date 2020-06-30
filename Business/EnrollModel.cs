@@ -41,6 +41,9 @@ namespace Business
         [DisplayName("Video Link")]
         public string CourseVideoLink { get; set; }
 
+        [DisplayName("Course Price")]
+        public Int64 coursePrice { get; set; }
+
         [DisplayName("Enrollment Type")]
         public string enrollmentType { get; set; }
 
@@ -50,5 +53,10 @@ namespace Business
 
         public List<EnrollModel> InstructorList { get; set; }
         public List<EnrollModel> EnrollmentList { get; set; }
+
+        public EnrollModel Product { get; set; }
+
+        public int Quantity { get; set; }
+
     }
 }

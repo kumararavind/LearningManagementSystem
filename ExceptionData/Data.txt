@@ -127,3 +127,117 @@ Enroll-->EnrolledVideo-->The foreach block is missing a closing "}" character.  
 Enroll-->EnrolledVideo-->The foreach block is missing a closing "}" character.  Make sure you have a matching "}" character for all the "{" characters within this block, and that none of the "}" characters are being interpreted as markup.
 	 at 6/29/2020 5:48:43 PM
 -----------------------
+Enroll-->AddCoursesToCart-->The parameters dictionary contains a null entry for parameter 'CourseId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult AddCoursesToCart(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 6/30/2020 3:25:57 PM
+-----------------------
+Enroll-->AddCoursesToCart-->The view 'AddCoursesToCart' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Enroll/AddCoursesToCart.aspx
+~/Views/Enroll/AddCoursesToCart.ascx
+~/Views/Shared/AddCoursesToCart.aspx
+~/Views/Shared/AddCoursesToCart.ascx
+~/Views/Enroll/AddCoursesToCart.cshtml
+~/Views/Enroll/AddCoursesToCart.vbhtml
+~/Views/Shared/AddCoursesToCart.cshtml
+~/Views/Shared/AddCoursesToCart.vbhtml	 at 6/30/2020 3:30:04 PM
+-----------------------
+Enroll-->GetAllCourseEnroll-->The if block is missing a closing "}" character.  Make sure you have a matching "}" character for all the "{" characters within this block, and that none of the "}" characters are being interpreted as markup.
+	 at 6/30/2020 4:24:52 PM
+-----------------------
+Enroll-->RemoveCoursesFromCart-->The parameters dictionary contains a null entry for parameter 'CourseId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult RemoveCoursesFromCart(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 6/30/2020 4:36:23 PM
+-----------------------
+Enroll-->RemoveCoursesFromCart-->Collection was modified; enumeration operation may not execute.	 at 6/30/2020 4:40:23 PM
+-----------------------
+Enroll-->AddCoursesToCart-->Collection was modified; enumeration operation may not execute.	 at 6/30/2020 4:59:16 PM
+-----------------------
+Enroll-->AddCoursesToCart-->Collection was modified; enumeration operation may not execute.	 at 6/30/2020 5:11:26 PM
+-----------------------
+Login-->Welcome-->Encountered end tag "li" with no matching start tag.  Are your start/end tags properly balanced?
+	 at 6/30/2020 5:32:11 PM
+-----------------------
+Enroll-->AddCoursesToCart-->The parameters dictionary contains a null entry for parameter 'CourseId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult AddCoursesToCart(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 6/30/2020 5:34:48 PM
+-----------------------
+Enroll-->Checkout-->E:\LearningManagementSystem(Git)\Views\Enroll\Checkout.cshtml(32): error CS1061: 'EnrollModel' does not contain a definition for 'Price' and no accessible extension method 'Price' accepting a first argument of type 'EnrollModel' could be found (are you missing a using directive or an assembly reference?)	 at 6/30/2020 6:06:17 PM
+-----------------------
+Enroll-->AddEnrollDetails-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult AddEnrollDetails(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 20:39:41
+-----------------------
+Enroll-->AddEnrollDetails-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult AddEnrollDetails(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 20:40:56
+-----------------------
+Enroll-->AddEnrollDetails-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult AddEnrollDetails(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 20:41:00
+-----------------------
+Enroll-->AddEnrollDetails-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult AddEnrollDetails(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 20:41:42
+-----------------------
+Enroll-->AddEnrollDetails-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult AddEnrollDetails(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 20:41:51
+-----------------------
+Enroll-->AddEnrollDetails-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult AddEnrollDetails(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 20:42:28
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:00:54
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:00:57
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:00:59
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:01:01
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:01:20
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:02:05
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:04:32
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:04:46
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:18:57
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:19:06
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:20:56
+-----------------------
+Enroll-->GetAllCourseEnroll-->The model item passed into the dictionary is of type 'Business.EnrollModel', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[Business.EnrollModel]'.	 at 30-06-2020 21:21:41
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:25:07
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'CourseId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:29:34
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'CourseId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:39:21
+-----------------------
+Enroll-->GetAllCourseEnroll-->The parameters dictionary contains a null entry for parameter 'CourseId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetAllCourseEnroll(Int32)' in 'LMSProfile.Controllers.EnrollController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 30-06-2020 21:45:19
+-----------------------
+Enroll-->GetAllCourseEnroll-->The model item passed into the dictionary is of type 'Business.EnrollModel', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[Business.EnrollModel]'.	 at 30-06-2020 21:49:40
+-----------------------
+Enroll-->GetAllCourseEnroll-->The model item passed into the dictionary is of type 'Business.EnrollModel', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[Business.EnrollModel]'.	 at 30-06-2020 21:51:05
+-----------------------
+Enroll-->AddCoursesToCart-->The view 'AddCoursesToCart' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Enroll/AddCoursesToCart.aspx
+~/Views/Enroll/AddCoursesToCart.ascx
+~/Views/Shared/AddCoursesToCart.aspx
+~/Views/Shared/AddCoursesToCart.ascx
+~/Views/Enroll/AddCoursesToCart.cshtml
+~/Views/Enroll/AddCoursesToCart.vbhtml
+~/Views/Shared/AddCoursesToCart.cshtml
+~/Views/Shared/AddCoursesToCart.vbhtml	 at 30-06-2020 21:57:58
+-----------------------
+Enroll-->CheckoutDetails-->Cannot perform runtime binding on a null reference	 at 30-06-2020 22:00:47
+-----------------------

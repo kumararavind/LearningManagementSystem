@@ -145,11 +145,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\EnrollController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstructorController.cs" />
+    <Compile Include="Controllers\Item.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -531,6 +533,9 @@
     <Content Include="Views\Enroll\GetAllCourseEnrolled.cshtml" />
     <Content Include="Views\Enroll\UpdateEnrollment.cshtml" />
     <Content Include="Views\Enroll\EnrolledVideo.cshtml" />
+    <Content Include="Views\Cart\Myorder.cshtml" />
+    <Content Include="Views\Enroll\CheckoutDetails.cshtml" />
+    <Content Include="Views\Enroll\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\LearningManagementSystem%28Git%29\v16\" />

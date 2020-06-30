@@ -29,7 +29,7 @@ namespace DataAccess
         {
             connection();
             List<EnrollModel> EnrollList = new List<EnrollModel>();
-            using (SqlCommand cmd = new SqlCommand("select course_id,course_category_id,course_name,course_instructor_id,course_length_hrs,course_desc,course_startdate,course_enddate from Course_Details", con))
+            using (SqlCommand cmd = new SqlCommand("select course_id,course_category_id,course_name,course_instructor_id,course_length_hrs,course_desc,course_startdate,course_enddate,course_price from Course_Details", con))
             {
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -46,7 +46,8 @@ namespace DataAccess
                             courseId = Convert.ToInt32(dr["course_id"]),
                             catId = Convert.ToInt32(dr["course_category_id"]),
                             courseName = Convert.ToString(dr["course_name"]),
-                            instructorId = Convert.ToInt32(dr["course_instructor_id"])
+                            instructorId = Convert.ToInt32(dr["course_instructor_id"]),
+                            coursePrice = Convert.ToInt64(dr["course_price"])
                         }
                         );
                 }

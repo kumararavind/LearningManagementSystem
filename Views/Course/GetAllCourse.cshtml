@@ -28,16 +28,20 @@
                     <p><b>@Html.DisplayNameFor(model => model.courseTech):</b> @Html.DisplayFor(modelItem => item.courseTech)</p>
                     <p><b>@Html.DisplayNameFor(model => model.courseStartDate):</b> @Html.DisplayFor(modelItem => item.courseStartDate)</p>
                     <p><b>@Html.DisplayNameFor(model => model.courseEndDate):</b> @Html.DisplayFor(modelItem => item.courseEndDate)</p>
-                    <p><b>@Html.DisplayNameFor(model => model.CourseVideoLink):</b> @Html.DisplayFor(modelItem => item.CourseVideoLink)</p>
-                    <p><b>@Html.DisplayNameFor(model => model.catId):</b> @Html.DisplayFor(modelItem => item.catId)</p>
-                    <p><b>@Html.DisplayNameFor(model => model.courseInstructorId):</b> @Html.DisplayFor(modelItem => item.courseInstructorId)</p>
+                    <p><b>@Html.DisplayNameFor(model => model.coursePrice):</b> @Html.DisplayFor(modelItem => item.coursePrice)</p>
                     @if (Convert.ToInt32(@Session["Accountid"]) == 1 || Convert.ToInt32(@Session["Accountid"]) == 2)
                     {
+                        <p><b>@Html.DisplayNameFor(model => model.CourseVideoLink):</b> @Html.DisplayFor(modelItem => item.CourseVideoLink)</p>
+                        <p><b>@Html.DisplayNameFor(model => model.catId):</b> @Html.DisplayFor(modelItem => item.catId)</p>
+                        <p><b>@Html.DisplayNameFor(model => model.courseInstructorId):</b> @Html.DisplayFor(modelItem => item.courseInstructorId)</p>
                         <p>
                             @Html.ActionLink("Edit", "EditCouDetails", new { id = item.courseId }) |
                             @Html.ActionLink("Delete", "DeleteCou", new { id = item.courseId }, new { onclick = "return confirm('Are sure wants to delete?');" })
                         </p>
                     }
+                    <a id="btn_add" href="@Url.Action("AddCoursesToCart", "Enroll",new { CourseId = item.courseId } )" class="btn btn-info btn-sm">
+                        <span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
+                    </a>
                 </div>
             </div>
         </div>

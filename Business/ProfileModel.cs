@@ -35,6 +35,10 @@ namespace Business
         [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; }
 
+        [DisplayName("Wallet Amount")]
+        public Int64 Wallet { get; set; }
+
+
         [Required(ErrorMessage = "Password is required")]
         [DataType(DataType.Password)]
         public string Password { get; set; }

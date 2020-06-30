@@ -15,6 +15,7 @@ namespace LMSProfile.Controllers
     public class EnrollController : Controller
     {
         EnrollModel em = new EnrollModel();
+        [Route("GetAllCourseEnroll")]
         [LogExceptions]
         public ActionResult GetAllCourseEnroll()
         {
@@ -174,5 +175,99 @@ namespace LMSProfile.Controllers
 
         }
 
+        [Route("AddCoursesToCart")]
+        [LogExceptions]
+        public ActionResult AddCoursesToCart(int CourseId)
+        {
+            Session["CourseId"] = CourseId;
+            EnrollRepo EnrRepo = new EnrollRepo();
+            if (Session["cart"] == null)
+            {
+                
+                List<EnrollModel> cart = new List<EnrollModel>();
+                var product = EnrRepo.GetAllCourseEnrollRepo().Find(enroll => enroll.courseId == CourseId);
+                cart.Add(new EnrollModel()
+                {
+                    Product = product,
+                    Quantity = 1
+                });
+                Session["cart"] = cart;
+            }
+            else
+            {
+
+                List<EnrollModel> cart =(List<EnrollModel>)Session["cart"];
+                var product = EnrRepo.GetAllCourseEnrollRepo().Find(enroll => enroll.courseId == CourseId);
+                if (cart.Count==0)
+                {
+                    cart.Add(new EnrollModel()
+                    {
+                        Product = product,
+                        Quantity = 1
+                    });
+                }
+                else
+                {
+                    foreach (var item in cart)
+                    {
+                        if (item.Product.courseId == CourseId)
+                        {
+                            cart.Remove(item);
+                            cart.Add(new EnrollModel()
+                            {
+                                Product = product,
+                                Quantity = 1
+                            });
+                            break;
+                        }
+                        else
+                        {
+                            cart.Add(new EnrollModel()
+                            {
+                                Product = product,
+                                Quantity = 1
+                            });
+                            break;
+                        }
+                    }
+                }
+                Session["cart"] = cart;
+            }
+            return RedirectToAction("CheckoutDetails");
+        }
+        [Route("RemoveCoursesFromCart")]
+        [LogExceptions]
+        public ActionResult RemoveCoursesFromCart(int CourseId)
+        {
+            List<EnrollModel> cart = (List<EnrollModel>)Session["cart"];
+            foreach (var item in cart)
+            {
+                if(item.Product.courseId==CourseId)
+                {
+                    cart.Remove(item);
+                    break;
+                }
+            }
+            Session["cart"] = cart;
+            return RedirectToAction("GetAllCourseEnroll");
+        }
+
+        [Route("Checkout")]
+        [LogExceptions]
+        public ActionResult Checkout()
+        {
+            return View();
+        }
+
+        [Route("CheckoutDetails")]
+        [LogExceptions]
+        public ActionResult CheckoutDetails()
+        {
+            return View();
+        }
     }
+        
+
+
 }
+

@@ -82,6 +82,8 @@ namespace LMSProfile.Controllers
                     FormsAuthentication.SetAuthCookie(ll.Email, true);
                     Session["UserId"] = sqd["userid"];
                     Session["Accountid"] = sqd["account_id"];
+                    Session["Name"] = sqd["name"];
+                    Session["Wallet"] = sqd["wallet"];
                     return RedirectToAction("Welcome", ll);
                 }
                 else

@@ -42,6 +42,7 @@ namespace DataAccess
                 model.Gender = sdr["gender"].ToString();
                 model.Contact = Convert.ToInt64(sdr["phno"]);
                 model.Address = sdr["address"].ToString();
+                model.Wallet = Convert.ToInt64(sdr["wallet"]);
 
             }
             con.Close();

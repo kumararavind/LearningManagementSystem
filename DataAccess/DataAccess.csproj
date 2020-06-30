@@ -82,6 +82,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartRepo.cs" />
     <Compile Include="CategoryRepo.cs" />
     <Compile Include="CourseRepo.cs" />
     <Compile Include="EnrollRepo.cs" />

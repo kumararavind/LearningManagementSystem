@@ -1,4 +1,5 @@
-﻿
+﻿@using Business;
+
 @{
     ViewBag.Title = "AfterLoginView";
 }
@@ -48,11 +49,31 @@
                     {
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("Courses", "GetAllCourse", "Course")</li>
-                        <li>@Html.ActionLink("Enroll", "GetAllCourseEnroll", "Enroll")</li>
+                        //<li>@Html.ActionLink("Enroll", "GetAllCourseEnroll", "Enroll")</li>
                         <li>@Html.ActionLink("Enrollments", "GetAllCourseEnrolled", "Enroll")</li>
                         <li>@Html.ActionLink("Profile", "ProfileDetails", "Profile")</li>
                         <li>@Html.ActionLink("Logout", "Logout", "Login")</li>
+                        <li>@Html.ActionLink("Check Out","CheckoutDetails","Enroll")</li>
                     }
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="@Url.Action("Myorder", "Cart")">
+                            <span class="glyphicon glyphicon-shopping-cart" style="color:green"></span> Cart <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            @if (Session["cart"] != null)
+                            {
+                                foreach (var item in (List<EnrollModel>)Session["cart"])
+                                {
+                                    <li><a href="@Url.Action("RemoveCoursesFromCart","Enroll",new { CourseId = item.Product.courseId })">@item.Product.courseName (@item.Quantity) <i class="glyphicon glyphicon-remove"></i></a></li>
+                                }
+
+                            }
+
+
+                        </ul>
+
+                    </li>
+
                 </ul>
             </div>
         </div>

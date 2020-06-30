@@ -63,6 +63,7 @@ namespace DataAccess
             com.Parameters.AddWithValue("@course_startdate", obj.courseStartDate);
             com.Parameters.AddWithValue("@course_enddate", obj.courseEndDate); 
             com.Parameters.AddWithValue("@course_video_link", obj.CourseVideoLink);
+            com.Parameters.AddWithValue("@course_price", obj.coursePrice);
             com.Parameters.AddWithValue("@catid", catId);
             com.Parameters.AddWithValue("@userid", obj.courseInstructorId);
             com.Parameters.AddWithValue("@status", "Create");
@@ -110,6 +111,7 @@ namespace DataAccess
                         courseDesc = Convert.ToString(dr["course_desc"]),
                         courseStartDate = Convert.ToDateTime(dr["course_startdate"]),
                         courseEndDate = Convert.ToDateTime(dr["course_enddate"]),
+                        coursePrice = Convert.ToInt64(dr["course_price"]),
                         CourseVideoLink = Convert.ToString(dr["course_video_link"]),
                         courseInstructorId = Convert.ToInt32(dr["course_instructor_id"])
                     }
@@ -130,6 +132,7 @@ namespace DataAccess
             com.Parameters.AddWithValue("@course_startdate", obj.courseStartDate);
             com.Parameters.AddWithValue("@course_enddate", obj.courseEndDate);
             com.Parameters.AddWithValue("@course_video_link", obj.CourseVideoLink);
+            com.Parameters.AddWithValue("@course_price", obj.coursePrice);
             com.Parameters.AddWithValue("@status", "Update");
             con.Open();
             int i = com.ExecuteNonQuery();

@@ -7,45 +7,6 @@
 
 <h2>List of Courses You Can Enroll</h2>
 
-@*<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.courseId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.courseName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.catId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.instructorId)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.courseId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.courseName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.catId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.instructorId)
-            </td>
-            <td>
-                @Html.ActionLink("Enroll", "AddEnrollDetails", new { id = item.courseId })
-            </td>
-        </tr>
-    }
-
-</table>*@
 <hr />
 <div class="row">
     @foreach (var item in Model)
@@ -55,10 +16,15 @@
                 <img src="\Images\CourseEnrollThumbnail.jpg" alt="...">
                 <div class="caption">
                     <h3><b>@Html.DisplayNameFor(model => model.courseName):</b> @Html.DisplayFor(modelItem => item.courseName)</h3>
-                    <p><b>@Html.DisplayNameFor(model => model.courseId):</b> @Html.DisplayFor(modelItem => item.courseId)</p>
-                    <p><b>@Html.DisplayNameFor(model => model.catId):</b> @Html.DisplayFor(modelItem => item.catId)</p>
-                    <p><b>@Html.DisplayNameFor(model => model.instructorId):</b> @Html.DisplayFor(modelItem => item.instructorId)</p>
+                    @if (Convert.ToInt32(@Session["Accountid"]) == 1 || Convert.ToInt32(@Session["Accountid"]) == 2)
+                    {
+                        <p><b>@Html.DisplayNameFor(model => model.courseId):</b> @Html.DisplayFor(modelItem => item.courseId)</p>
+                        <p><b>@Html.DisplayNameFor(model => model.catId):</b> @Html.DisplayFor(modelItem => item.catId)</p>
+                        <p><b>@Html.DisplayNameFor(model => model.instructorId):</b> @Html.DisplayFor(modelItem => item.instructorId)</p>
+                    }
+                    <hr />
                     <p>@Html.ActionLink("Enroll", "AddEnrollDetails", new { id = item.courseId })</p>
+                    
                 </div>
             </div>
         </div>
