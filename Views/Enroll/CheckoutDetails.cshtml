@@ -20,9 +20,8 @@ else
             <tr>
                 <th>Product</th>
                 <th>Price</th>
-                <th>Quantity</th>
                 <th>Line Total</th>
-                <th>Add</th>
+                <th>Remove</th>
             </tr>
         </thead>
         <tbody>
@@ -37,14 +36,13 @@ else
                 <tr>
                     <td>@item.Product.courseName</td>
                     <td>@item.Product.coursePrice</td>
-                    <td>@item.Quantity</td>
                     <td>@lineTotal</td>
                     <td>
-                        <a href="@Url.Action("AddCoursesToCart", "Enroll", new { CourseId = item.Product.courseId, url="CheckoutDetails" })">
+                        @*<a href="@Url.Action("AddCoursesToCart", "Enroll", new { CourseId = item.Product.courseId, url="CheckoutDetails" })">
                             <i class="glyphicon glyphicon-plus"></i>
-                        </a>
-                        <a href="@Url.Action("RemoveCoursesFromCart", "Enroll", new { CourseId = item.Product.courseId })">
-                            <i class="glyphicon glyphicon-minus"></i>
+                        </a>*@
+                        <a href="@Url.Action("RemoveCoursesFromCart", "Enroll", new { CourseId = item.Product.courseId, url="CheckoutDetails" })">
+                            <i class="glyphicon glyphicon-trash"></i>
                         </a>
                     </td>
                 </tr>

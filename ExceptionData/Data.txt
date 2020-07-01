@@ -241,3 +241,5 @@ Enroll-->AddCoursesToCart-->The view 'AddCoursesToCart' or its master was not fo
 -----------------------
 Enroll-->CheckoutDetails-->Cannot perform runtime binding on a null reference	 at 30-06-2020 22:00:47
 -----------------------
+Enroll-->GetAllCourseEnrolled-->E:\LearningManagementSystem(Git)\Views\Enroll\GetAllCourseEnrolled.cshtml(54): error CS0019: Operator '==' cannot be applied to operands of type 'IEnumerable<EnrollModel>' and 'int'	 at 01-07-2020 13:27:00
+-----------------------

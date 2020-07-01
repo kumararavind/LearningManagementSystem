@@ -249,15 +249,13 @@ namespace LMSProfile.Controllers
                 }
             }
             Session["cart"] = cart;
-            return RedirectToAction("GetAllCourseEnroll");
+            if (cart.Count == 0)
+            {
+                Session.Remove("cart");
+            }
+            return RedirectToAction("CheckoutDetails");
         }
 
-        [Route("Checkout")]
-        [LogExceptions]
-        public ActionResult Checkout()
-        {
-            return View();
-        }
 
         [Route("CheckoutDetails")]
         [LogExceptions]

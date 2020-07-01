@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Business.EnrollModel>
+﻿@using Business;
+@model IEnumerable<Business.EnrollModel>
 
 @{
     ViewBag.Title = "GetAllCourseEnroll";
@@ -9,22 +10,21 @@
 
 <hr />
 <div class="row">
-    @foreach (var item in Model)
+    @foreach (EnrollModel item in (List<EnrollModel>)Session["cart"])
     {
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <img src="\Images\CourseEnrollThumbnail.jpg" alt="...">
                 <div class="caption">
-                    <h3><b>@Html.DisplayNameFor(model => model.courseName):</b> @Html.DisplayFor(modelItem => item.courseName)</h3>
+                    <h3><b>@Html.DisplayNameFor(model => model.courseName):</b> @Html.DisplayFor(modelItem => item.Product.courseName)</h3>
                     @if (Convert.ToInt32(@Session["Accountid"]) == 1 || Convert.ToInt32(@Session["Accountid"]) == 2)
                     {
-                        <p><b>@Html.DisplayNameFor(model => model.courseId):</b> @Html.DisplayFor(modelItem => item.courseId)</p>
-                        <p><b>@Html.DisplayNameFor(model => model.catId):</b> @Html.DisplayFor(modelItem => item.catId)</p>
-                        <p><b>@Html.DisplayNameFor(model => model.instructorId):</b> @Html.DisplayFor(modelItem => item.instructorId)</p>
+                        <p><b>@Html.DisplayNameFor(model => model.courseId):</b> @Html.DisplayFor(modelItem => item.Product.courseId)</p>
+                        <p><b>@Html.DisplayNameFor(model => model.catId):</b> @Html.DisplayFor(modelItem => item.Product.catId)</p>
+                        <p><b>@Html.DisplayNameFor(model => model.instructorId):</b> @Html.DisplayFor(modelItem => item.Product.instructorId)</p>
                     }
                     <hr />
-                    <p>@Html.ActionLink("Enroll", "AddEnrollDetails", new { id = item.courseId })</p>
-                    
+                    <p>@Html.ActionLink("Enroll", "AddEnrollDetails", new { id = item.Product.courseId })</p>
                 </div>
             </div>
         </div>

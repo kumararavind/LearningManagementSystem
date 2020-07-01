@@ -88,6 +88,7 @@ namespace DataAccess
             connection();
             cmd.Parameters.AddWithValue("@accountid", s1);
             cmd.Parameters.AddWithValue("@userid", s2);
+            cmd.Parameters.AddWithValue("@instructorid", s2);
             cmd.Parameters.AddWithValue("@status", "Read");
             List<EnrollModel> EnrollList1 = new List<EnrollModel>();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

@@ -39,7 +39,7 @@
                             @Html.ActionLink("Delete", "DeleteCou", new { id = item.courseId }, new { onclick = "return confirm('Are sure wants to delete?');" })
                         </p>
                     }
-                    <a id="btn_add" href="@Url.Action("AddCoursesToCart", "Enroll",new { CourseId = item.courseId } )" class="btn btn-info btn-sm">
+                    <a id="btn_add" href="@Url.Action("AddCoursesToCart", "Enroll",new { CourseId = item.courseId, url="GetAllCourse" } )" class="btn btn-info btn-sm">
                         <span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
                     </a>
                 </div>
