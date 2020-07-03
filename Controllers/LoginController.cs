@@ -67,14 +67,14 @@ namespace LMSProfile.Controllers
             connection();
             try
             {
-            string accountid = Convert.ToString(form["AccountList"]);
+            //string accountid = Convert.ToString(form["AccountList"]);
             con.Open();
             using (SqlCommand cmd = new SqlCommand("SP_Login_Logout", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@email", ll.Email);
                 cmd.Parameters.AddWithValue("@password", ll.Password);
-                cmd.Parameters.AddWithValue("@accountid", accountid);//create  A drop down in the login page stating account type and while clicking login dropdown should send the account number .
+                //cmd.Parameters.AddWithValue("@accountid", accountid);//create  A drop down in the login page stating account type and while clicking login dropdown should send the account number .
                 cmd.ExecuteNonQuery();
                 SqlDataReader sqd = cmd.ExecuteReader();
                 if (sqd.Read())
@@ -125,9 +125,7 @@ namespace LMSProfile.Controllers
         }
 
       
-        [Route("AddUsers")]
         [LogExceptions]
-        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public ActionResult AddUsers(ProfileModel model)
         {
             try
@@ -144,7 +142,6 @@ namespace LMSProfile.Controllers
         }
 
         [HttpPost]
-        [Route("AddUsers")]
         [LogExceptions]
         public ActionResult AddUsers(ProfileModel model, FormCollection form)
         {

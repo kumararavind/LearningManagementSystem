@@ -5,10 +5,14 @@
     ViewBag.Title = "GetAllCourseEnroll";
     Layout = "~/Views/Shared/AfterLoginView.cshtml";
 }
-
-<h2>List of Courses You Can Enroll</h2>
-
-<hr />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <h2>List of Courses You Can Enroll</h2>
+    <hr />
+</div>
 <div class="row">
     @foreach (EnrollModel item in (List<EnrollModel>)Session["cart"])
     {

@@ -243,3 +243,14 @@ Enroll-->CheckoutDetails-->Cannot perform runtime binding on a null reference	 a
 -----------------------
 Enroll-->GetAllCourseEnrolled-->E:\LearningManagementSystem(Git)\Views\Enroll\GetAllCourseEnrolled.cshtml(54): error CS0019: Operator '==' cannot be applied to operands of type 'IEnumerable<EnrollModel>' and 'int'	 at 01-07-2020 13:27:00
 -----------------------
+Profile-->ProfileDetails-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult ProfileDetails(Int32, Business.ProfileModel)' in 'LMSProfile.Controllers.ProfileController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 01-07-2020 19:53:10
+-----------------------
+Profile-->ProfileDetails-->The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult ProfileDetails(Int32, Business.ProfileModel)' in 'LMSProfile.Controllers.ProfileController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters	 at 01-07-2020 19:53:37
+-----------------------
+Login-->AddUsers-->Object reference not set to an instance of an object.	 at 01-07-2020 20:41:44
+-----------------------
+Login-->AddUsers-->Value cannot be null.
+Parameter name: items	 at 01-07-2020 20:46:29
+-----------------------

@@ -4,7 +4,6 @@
     Layout = "~/Views/Shared/AfterLoginView.cshtml";
 }
 
-@Scripts.Render("~/bundles/bootstrap")
 <style>
     .carousel .item {
         height: 500px;
@@ -17,8 +16,9 @@
         min-height: 500px;
     }
 </style>
-
-<h2>Welcome: @System.Convert.ToString(Session["Name"])</h2>
+<br/>
+<br/>
+<div class="container"><h2>Welcome: @System.Convert.ToString(Session["Name"])</h2><hr /></div>
 <br />
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -63,6 +63,8 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+<br />
+<br />
 
 
 

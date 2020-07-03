@@ -16,7 +16,6 @@ namespace LMSProfile.Controllers
     {
         
         [LogExceptions]
-        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public ActionResult ProfileDetails(ProfileModel model) //can be seen in profile page and used to retrieve values inside textboxes.
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)
@@ -29,10 +28,10 @@ namespace LMSProfile.Controllers
                 catch (SqlException)
                 {
                     ViewBag.duplicatemessage = "Error While Loading Profile";
-                    return View("ProfileDetails", model);
+                    return View(model);
                 }
 
-                return View("ProfileDetails", model);
+                return View(model);
             }
             else
             {
@@ -44,7 +43,6 @@ namespace LMSProfile.Controllers
         [HttpPost]
         [LogExceptions]
         [Route("ProfileDetails1")]
-        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public ActionResult ProfileDetails1(ProfileModel model) //used to update the profile page after clicking the update button in profile page.
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)

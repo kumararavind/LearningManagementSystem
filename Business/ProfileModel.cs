@@ -11,40 +11,37 @@ namespace Business
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Name is required")]
-        [MaxLength(12)]
+        [Required]
         public string Name { get; set; }
-
-        [Required(ErrorMessage = "Email is required")]
-        [EmailAddress(ErrorMessage = "Invalid Email Address")]
+        
+        [Required]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Contact is required")]
-        [RegularExpression(@"^(\d{10})$", ErrorMessage = "Wrong mobile")]
+        [Required]
         public Int64 Contact { get; set; }
         [DisplayName("Birth date")]
-        [Required(ErrorMessage = "Date of birth is required")]
+        [Required]
         [DataType(DataType.Date)]
         public string DateOfBirth { get; set; }
 
         [DisplayName("Gender")]
-        [Required(ErrorMessage = "Gender is required")]
+        [Required]
         public string Gender { get; set; }
 
         [DisplayName("Address")]
-        [Required(ErrorMessage = "Address is required")]
+        [Required]
         public string Address { get; set; }
 
         [DisplayName("Wallet Amount")]
         public Int64 Wallet { get; set; }
 
 
-        [Required(ErrorMessage = "Password is required")]
+        [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [DisplayName("Confirm Password")]
-        [Required(ErrorMessage = "Confirm Password is required")]
+        [Required]
         [DataType(DataType.Password)]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }

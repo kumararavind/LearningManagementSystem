@@ -8,11 +8,11 @@ namespace Business
 {
     public class LoginLogout
     {
-        [Required(ErrorMessage = "Email is required")]
+        [Required]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Password is required")]
+        [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 

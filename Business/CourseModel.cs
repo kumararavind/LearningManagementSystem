@@ -11,9 +11,11 @@ namespace Business
     public class CourseModel
     {
         [DisplayName("Course Id")]
+
         public int courseId { get; set; }
 
         [DisplayName("Course Name")]
+
         public string courseName { get; set; }
 
         [DisplayName("Course Length")]
