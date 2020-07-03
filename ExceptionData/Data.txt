@@ -254,3 +254,7 @@ Login-->AddUsers-->Object reference not set to an instance of an object.	 at 01-
 Login-->AddUsers-->Value cannot be null.
 Parameter name: items	 at 01-07-2020 20:46:29
 -----------------------
+Login-->Index-->The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.	 at 03-07-2020 14:11:11
+-----------------------
+Login-->Index-->The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.	 at 03-07-2020 14:47:04
+-----------------------

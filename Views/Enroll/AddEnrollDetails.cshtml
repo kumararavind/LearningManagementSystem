@@ -4,15 +4,17 @@
     ViewBag.Title = "AddEnrollDetails";
     Layout = "~/Views/Shared/AfterLoginView.cshtml";
 }
-<div class="" style="background-image:url('../../Images/Profile.jpg'); background-size:cover; height:800px; width:100%;">
+<div class="" style="background-image:url('../../Images/Profile.jpg'); background-size:cover; height:440px; width:100%;">
     <br />
     <div class="container-fluid" style="">
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
             <div class="col-md-2"></div>
-            <h2 style="color:white;">Enroll</h2>
-            <br />
+            <div class="container">
+                <h2 style="color:white;">Enroll</h2>
+                <hr />
+            </div>
             <div class="form-horizontal">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.Id)

@@ -10,11 +10,11 @@ using System.Web.Security;
 using System.Web.Services.Description;
 using System.Linq.Expressions;
 using System.Configuration;
-//using LMSProfile.Models;
-//using LMSProfile.Repository;
 using DataAccess;
 using Business;
 using LMSProfile.ExceptionLogger;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
 
 namespace LMSProfile.Controllers
 {
@@ -30,7 +30,6 @@ namespace LMSProfile.Controllers
         }
 
         [LogExceptions]
-        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public ActionResult Index()
         {
             connection();
@@ -48,7 +47,6 @@ namespace LMSProfile.Controllers
         }
 
         [LogExceptions]
-        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
@@ -61,9 +59,14 @@ namespace LMSProfile.Controllers
         [HttpPost]
         [Route("Index")]
         [LogExceptions]
-        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public ActionResult Index(LoginLogout ll,FormCollection form) //this is the login page which u will see at first.
         {
+            //Twilio
+            const string accountSid = "ACcd284ab6585e00088da9b2ada4ff1917";
+            const string authToken = "9506bed840982194603f21e43d1511ae";
+
+            TwilioClient.Init(accountSid, authToken);
+
             connection();
             try
             {
@@ -84,7 +87,14 @@ namespace LMSProfile.Controllers
                     Session["Accountid"] = sqd["account_id"];
                     Session["Name"] = sqd["name"];
                     Session["Wallet"] = sqd["wallet"];
+                    Session["PhoneNo"] = sqd["contact"];
+                    var message = MessageResource.Create(
+                    body: "You have Logged in to Learning App Please remember UserID For Future Needs: " + Convert.ToInt32(Session["UserId"]) + " And Your Current Wallet Amount is:" + Convert.ToInt32(Session["Wallet"]) + "",
+                    from: new Twilio.Types.PhoneNumber("+12057758497"),
+                    to: new Twilio.Types.PhoneNumber("+91" + Session["PhoneNo"].ToString())
+                    );
                     return RedirectToAction("Welcome", ll);
+
                 }
                 else
                 {
@@ -92,8 +102,9 @@ namespace LMSProfile.Controllers
                     ViewData["message"] = "Login Attempt Failed! Check Email And Password";
                 }
             }
-                    
-            con.Close();
+                
+
+                con.Close();
 
             }
             catch (SqlException)

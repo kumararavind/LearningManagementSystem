@@ -11,8 +11,10 @@
         {
             @Html.AntiForgeryToken()
             <div class="col-md-2"></div>
-            <h2 style="color:white;">Profile Details</h2>
-            <br />
+            <div class="container">
+                <h2 style="color:white;">Profile Details</h2>
+                <hr />
+            </div>
             <div class="form-horizontal">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
