@@ -1,4 +1,4 @@
-﻿using System;
+﻿`using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -62,8 +62,8 @@ namespace LMSProfile.Controllers
         public ActionResult Index(LoginLogout ll,FormCollection form) //this is the login page which u will see at first.
         {
             //Twilio
-            const string accountSid = "ACcd284ab6585e00088da9b2ada4ff1917";
-            const string authToken = "9506bed840982194603f21e43d1511ae";
+            const string accountSid = "";
+            const string authToken = "";
 
             TwilioClient.Init(accountSid, authToken);
 
