@@ -25,6 +25,8 @@ namespace LMSProfile
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-Flatly.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/bundles/layout").Include(
+                "~/Content/layout.css"));
         }
     }
 }

@@ -19,11 +19,14 @@
                     <img src="\Images\CatThumbnail.jpg" alt="...">
                     <div class="caption">
                         <h3><b>@Html.DisplayNameFor(model => model.Name):</b> @Html.DisplayFor(modelItem => item.Name)</h3>
-                        <p><b>@Html.DisplayNameFor(model => model.Id):</b> @Html.DisplayFor(modelItem => item.Id)</p>
                         <p><b>@Html.DisplayNameFor(model => model.Email):</b> @Html.DisplayFor(modelItem => item.Email)</p>
                         <p><b>@Html.DisplayNameFor(model => model.Contact):</b> @Html.DisplayFor(modelItem => item.Contact)</p>
-                        <p><b>@Html.DisplayNameFor(model => model.Address):</b> @Html.DisplayFor(modelItem => item.Address)</p>
-                        <p>@Html.ActionLink("Delete", "DeleteInst", new { id = item.Id }, new { onclick = "return confirm('Are sure wants to delete?');" })</p>
+                        @if (Convert.ToInt32(@Session["Accountid"]) == 1)
+                        {
+                            <p><b>@Html.DisplayNameFor(model => model.Address):</b> @Html.DisplayFor(modelItem => item.Address)</p>
+                            <p><b>@Html.DisplayNameFor(model => model.Id):</b> @Html.DisplayFor(modelItem => item.Id)</p>
+                            <p>@Html.ActionLink("Delete", "DeleteInst", new { id = item.Id }, new { onclick = "return confirm('Are sure wants to delete?');" })</p>
+                        }
                     </div>
                 </div>
             </div>

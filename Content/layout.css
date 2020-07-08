@@ -1,0 +1,253 @@
+﻿body {
+font-family: 'Trebuchet MS';
+color: #777;
+}
+
+.navbar {
+font-family: 'Trebuchet MS';
+margin-bottom: 0;
+background-color: #2d2d30;
+border: 0;
+font-size: 14px;
+letter-spacing: 4px;
+}
+
+.navbar li a, .navbar .navbar-brand {
+color: #d5d5d5;
+}
+
+.navbar-nav li a:hover {
+color: #fff;
+}
+
+.navbar-nav li.active a {
+color: #fff;
+background-color: #29292c;
+}
+
+.navbar-default .navbar-toggle {
+border-color: transparent;
+}
+
+.open .dropdown-toggle {
+color: #fff;
+background-color: #555;
+}
+
+.dropdown-menu li a {
+color: #000;
+}
+
+.dropdown-menu li a:hover {
+background-color: red;
+}
+
+label {
+color: white;
+}
+/* Main Footer */
+footer .main-footer {
+padding: 20px 0;
+background: #252525;
+}
+
+footer ul {
+padding-left: 0;
+list-style: none;
+}
+
+/* Copy Right Footer */
+.footer-copyright {
+background: #222;
+padding: 5px 0;
+}
+
+.footer-copyright .logo {
+display: inherit;
+}
+
+.footer-copyright nav {
+float: right;
+margin-top: 5px;
+}
+
+.footer-copyright nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.footer-copyright nav ul li {
+border-left: 1px solid #505050;
+display: inline-block;
+line-height: 12px;
+margin: 0;
+padding: 0 8px;
+}
+
+.footer-copyright nav ul li a {
+    color: #969696;
+}
+
+.footer-copyright nav ul li:first-child {
+    border: medium none;
+    padding-left: 0;
+}
+
+.footer-copyright p {
+color: #969696;
+margin: 2px 0 0;
+}
+
+/* Footer Top */
+.footer-top {
+background: #252525;
+padding-bottom: 30px;
+margin-bottom: 30px;
+border-bottom: 3px solid #222;
+}
+
+/* Footer transparent */
+footer.transparent .footer-top, footer.transparent .main-footer {
+background: transparent;
+}
+
+footer.transparent .footer-copyright {
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Footer light */
+footer.light .footer-top {
+background: #f9f9f9;
+}
+
+footer.light .main-footer {
+background: #f9f9f9;
+}
+
+footer.light .footer-copyright {
+background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Footer 4 */
+.footer- .logo {
+display: inline-block;
+}
+
+/*==================== 
+Widgets 
+====================== */
+.widget {
+padding: 20px;
+margin-bottom: 40px;
+}
+
+.widget.widget-last {
+margin-bottom: 0px;
+}
+
+.widget.no-box {
+padding: 0;
+background-color: transparent;
+margin-bottom: 40px;
+box-shadow: none;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+}
+
+.widget.subscribe p {
+margin-bottom: 18px;
+color:lightgrey;
+}
+.widget.no-box p{
+    color:lightgrey;
+}
+.widget li a {
+    color: #ff8d1e;
+}
+
+.widget li a:hover {
+color: #4b92dc;
+}
+
+.widget-title {
+    margin-bottom: 20px;
+    color: lightgrey;
+}
+
+.widget .badge {
+float: right;
+background: #7f7f7f;
+}
+
+
+/*Cards in dashboard*/
+.card-counter {
+    box-shadow: 2px 2px 10px #DADADA;
+    margin: 5px;
+    padding: 20px 10px;
+    background-color: #fff;
+    height: 100px;
+    border-radius: 5px;
+    transition: .3s linear all;
+}
+
+    .card-counter:hover {
+        box-shadow: 5px 5px 30px #888888;
+        transition: .3s linear all;
+    }
+
+    .card-counter.primary {
+        background-color: #007bff;
+        color: #FFF;
+    }
+
+    .card-counter.danger {
+        background-color: #ef5350;
+        color: #FFF;
+    }
+
+    .card-counter.success {
+        background-color: #66bb6a;
+        color: #FFF;
+    }
+
+    .card-counter.info {
+        background-color: #26c6da;
+        color: #FFF;
+    }
+
+    .card-counter i {
+        font-size: 5em;
+        opacity: 0.2;
+    }
+
+    .card-counter .count-numbers {
+        position: absolute;
+        right: 35px;
+        top: 20px;
+        font-size: 32px;
+        display: block;
+    }
+
+    .card-counter .count-name {
+        position: absolute;
+        right: 35px;
+        top: 65px;
+        font-style: italic;
+        text-transform: capitalize;
+        opacity: 0.9;
+        color: whitesmoke;
+        display: block;
+        font-size: 18px;
+    }
+.carousel .item {
+    height: 500px;
+}
+
+.item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+}

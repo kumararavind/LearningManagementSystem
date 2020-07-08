@@ -19,7 +19,7 @@ namespace DataAccess
 
         private void connection()
         {
-            string connect = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString.ToString();
+            string connect = ConfigurationManager.ConnectionStrings["LMSDB"].ConnectionString.ToString();
             con = new SqlConnection(connect);
             cmd = new SqlCommand("SP_CRUD_Enrollments", con);
             cmd.CommandType = CommandType.StoredProcedure;

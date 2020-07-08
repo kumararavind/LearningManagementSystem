@@ -17,7 +17,7 @@ namespace DataAccess
         //To Handle connection related activities    
         public void connection()
         {
-            string constr = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString.ToString();
+            string constr = ConfigurationManager.ConnectionStrings["LMSDB"].ConnectionString.ToString();
             con = new SqlConnection(constr);
             com = new SqlCommand("SP_CRUD_Category", con);
             com.CommandType = CommandType.StoredProcedure;

@@ -7,7 +7,19 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<div class="" style="background-image:url('../../Images/bg.jpg'); background-size:cover; height:440px; width:100%;">
+<style>
+    .carousel .item {
+        height: 500px;
+    }
+
+    .item img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-height: 500px;
+    }
+</style>
+<div style="background-image:url('../../Images/bg.jpg'); background-size:cover; height:440px;">
     <div class="col-sm-1"></div>
     <div class="col-md-4" style="margin-top:60px;">
         <h1 style="color:white; font-size: 60px;">Your Course to Success</h1>
@@ -20,7 +32,7 @@
 </div>
 <br />
 <br />
-<div class="" style="width:100%;">
+<div>
     <center><h2 style="font-weight:700;">Best learnings for anyone, anywhere</h2></center>
     <br />
     <div class="col-md-2"></div>
@@ -73,7 +85,7 @@
 <br />
 <br />
 <br />
-<div class="" style="background-image:url('../../Images/home2.jpg'); background-size:cover; height:400px; width:100%;">
+<div style="background-image:url('../../Images/home2.jpg'); background-size:cover; height:400px;">
     <div class="col-sm-1"></div>
     <div class="col-md-4" style="margin-top:60px;">
         <h1 style="color:white; font-size: 60px;">TOP QUALITY</h1>
@@ -86,40 +98,42 @@
 </div>
 <br />
 <br />
-<div class="" style="width:100%;">
-    <center><h2 style="font-weight:700;">Best Instructors</h2></center>
-    <br />
-    <div class="col-md-2"></div>
-    <div class="row">
-        <div class="col-sm-2 col-md-2">
-            <div class="thumbnail">
-                <img src="../../Images/inst1.jpg" alt="..." style="height:160px">
-                <div class="caption">
-                    <center><h3>Mike</h3></center>
+<div class="container-fluid">
+    <div>
+        <center><h2 style="font-weight:700;">Best Instructors</h2></center>
+        <br />
+        <div class="col-md-2"></div>
+        <div class="row">
+            <div class="col-sm-2 col-md-2">
+                <div class="thumbnail">
+                    <img src="../../Images/inst1.jpg" alt="..." style="height:160px">
+                    <div class="caption">
+                        <center><h3>Mike</h3></center>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-2 col-md-2">
-            <div class="thumbnail">
-                <img src="../../Images/inst2.jpg" alt="..." style="height:160px">
-                <div class="caption">
-                    <center><h3>Rayan</h3></center>
+            <div class="col-sm-2 col-md-2">
+                <div class="thumbnail">
+                    <img src="../../Images/inst2.jpg" alt="..." style="height:160px">
+                    <div class="caption">
+                        <center><h3>Rayan</h3></center>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-2 col-md-2">
-            <div class="thumbnail">
-                <img src="../../Images/inst3.jpg" alt="..." style="height:160px">
-                <div class="caption">
-                    <center><h3>Michel</h3></center>
+            <div class="col-sm-2 col-md-2">
+                <div class="thumbnail">
+                    <img src="../../Images/inst3.jpg" alt="..." style="height:160px">
+                    <div class="caption">
+                        <center><h3>Michel</h3></center>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-2 col-md-2">
-            <div class="thumbnail">
-                <img src="../../Images/inst4.jpg" alt="..." style="height:160px">
-                <div class="caption">
-                    <center><h3>Daboo</h3></center>
+            <div class="col-sm-2 col-md-2">
+                <div class="thumbnail">
+                    <img src="../../Images/inst4.jpg" alt="..." style="height:160px">
+                    <div class="caption">
+                        <center><h3>Daboo</h3></center>
+                    </div>
                 </div>
             </div>
         </div>
@@ -172,9 +186,10 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+
 <br />
 <br />
-<div class="" style="background-image:url('../../Images/home7.jpg'); background-size:cover; height:600px; width:100%;">
+<div style="background-image:url('../../Images/home7.jpg'); background-size:cover; height:600px;">
     <center>
         <div class="col-md-4"></div>
         <div class="col-md-4" style="margin-top:30px;">

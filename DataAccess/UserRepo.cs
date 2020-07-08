@@ -17,7 +17,7 @@ namespace DataAccess
         private ProfileModel model;
         private void connection()
         {
-            string constr = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString.ToString();
+            string constr = ConfigurationManager.ConnectionStrings["LMSDB"].ConnectionString.ToString();
             con = new SqlConnection(constr);
             com = new SqlCommand("SP_Admin_Instructor_User", con);
             com.CommandType = CommandType.StoredProcedure;

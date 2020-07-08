@@ -1,4 +1,4 @@
-﻿`using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -24,7 +24,7 @@ namespace LMSProfile.Controllers
         private SqlConnection con;   
         private void connection()
         {
-            string constr = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString.ToString();
+            string constr = ConfigurationManager.ConnectionStrings["LMSDB"].ConnectionString.ToString();
             con = new SqlConnection(constr);
 
         }
@@ -62,10 +62,10 @@ namespace LMSProfile.Controllers
         public ActionResult Index(LoginLogout ll,FormCollection form) //this is the login page which u will see at first.
         {
             //Twilio
-            const string accountSid = "";
-            const string authToken = "";
+            //const string accountSid = "";
+            //const string authToken = "";
 
-            TwilioClient.Init(accountSid, authToken);
+            //TwilioClient.Init(accountSid, authToken);
 
             connection();
             try
@@ -82,18 +82,24 @@ namespace LMSProfile.Controllers
                 SqlDataReader sqd = cmd.ExecuteReader();
                 if (sqd.Read())
                 {
-                    FormsAuthentication.SetAuthCookie(ll.Email, true);
-                    Session["UserId"] = sqd["userid"];
-                    Session["Accountid"] = sqd["account_id"];
-                    Session["Name"] = sqd["name"];
-                    Session["Wallet"] = sqd["wallet"];
-                    Session["PhoneNo"] = sqd["contact"];
-                    var message = MessageResource.Create(
-                    body: "You have Logged in to Learning App Please remember UserID For Future Needs: " + Convert.ToInt32(Session["UserId"]) + " And Your Current Wallet Amount is:" + Convert.ToInt32(Session["Wallet"]) + "",
-                    from: new Twilio.Types.PhoneNumber("+12057758497"),
-                    to: new Twilio.Types.PhoneNumber("+91" + Session["PhoneNo"].ToString())
-                    );
-                    return RedirectToAction("Welcome", ll);
+                        FormsAuthentication.SetAuthCookie(ll.Email, true);
+                        Session["UserId"] = sqd["userid"];
+                        Session["Accountid"] = sqd["account_id"];
+                        Session["Name"] = sqd["name"];
+                        Session["Wallet"] = sqd["wallet"];
+                        Session["PhoneNo"] = sqd["contact"];
+                        Session["AdminCount"] = sqd["admin_count"];
+                        Session["InstructorCount"] = sqd["instructor_count"];
+                        Session["UserCount"] = sqd["user_count"];
+                        Session["CategoryCount"] = sqd["category_count"];
+                        Session["CourseCount"] = sqd["course_count"];
+
+                        //var message = MessageResource.Create(
+                        //body: "You have Logged in to Learning App Please remember UserID For Future Needs: " + Convert.ToInt32(Session["UserId"]) + " And Your Current Wallet Amount is:" + Convert.ToInt32(Session["Wallet"]) + "",
+                        //from: new Twilio.Types.PhoneNumber("+12057758497"),
+                        //to: new Twilio.Types.PhoneNumber("+91" + Session["PhoneNo"].ToString())
+                        //);
+                        return RedirectToAction("Welcome", ll);
 
                 }
                 else

@@ -19,7 +19,7 @@ namespace DataAccess
         //To Handle connection related activities    
         private void connection()
         {
-            string constr = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString.ToString();
+            string constr = ConfigurationManager.ConnectionStrings["LMSDB"].ConnectionString.ToString();
             con = new SqlConnection(constr);
 
         }
