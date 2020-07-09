@@ -170,7 +170,7 @@ namespace LMSProfile.Controllers
                 ProfileModel model2 = Lr.dropdownrepo1();
                 if (Lr.AddUsersrepo(model,form))
                 {
-                    ViewData["Successmessage"] = "Course details added successfully.";
+                    ViewData["Successmessage"] = "Registered successfully.";
                     
                 }
                 return View(model2);

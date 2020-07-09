@@ -1,6 +1,4 @@
 ﻿using LMSProfile.ExceptionLogger;
-//using LMSProfile.Models;
-//using LMSProfile.Repository;
 using DataAccess;
 using Business;
 using System;
@@ -14,10 +12,11 @@ namespace LMSProfile.Controllers
 {
     public class ProfileController : Controller
     {
-        
+        [Route("ProfileDetails")]
         [LogExceptions]
-        public ActionResult ProfileDetails(ProfileModel model) //can be seen in profile page and used to retrieve values inside textboxes.
+        public ActionResult ProfileDetails() //can be seen in profile page and used to retrieve values inside textboxes.
         {
+            ProfileModel model = new ProfileModel();
             if (Session["UserId"] != null && Session["Accountid"] != null)
             {
                 try
@@ -27,7 +26,7 @@ namespace LMSProfile.Controllers
                 }
                 catch (SqlException)
                 {
-                    ViewBag.duplicatemessage = "Error While Loading Profile";
+                    ViewData["Errormessage"] = "Error While Loading Profile.";
                     return View(model);
                 }
 
@@ -42,8 +41,8 @@ namespace LMSProfile.Controllers
 
         [HttpPost]
         [LogExceptions]
-        [Route("ProfileDetails1")]
-        public ActionResult ProfileDetails1(ProfileModel model) //used to update the profile page after clicking the update button in profile page.
+        [Route("ProfileDetails")]
+        public ActionResult ProfileDetails(ProfileModel model) //used to update the profile page after clicking the update button in profile page.
         {
             if (Session["UserId"] != null && Session["Accountid"] != null)
             {
@@ -54,11 +53,11 @@ namespace LMSProfile.Controllers
                 }
                 catch (SqlException)
                 {
-                    ViewBag.duplicatemessage = "Profile Updation Failed";
-                    return RedirectToAction("ProfileDetails", model);
+                    ViewData["Errormessage"] = "Profile Updation Failed.";
+                    return View(model);
                 }
-                ViewBag.Successmessage = "Profile Updated";
-                return RedirectToAction("ProfileDetails", model);
+                ViewData["Successmessage"] = "Profile Updated Sucessfully.";
+                return View(model);
             }
             else
             {

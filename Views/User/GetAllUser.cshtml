@@ -25,7 +25,7 @@
                         {
                             <p><b>@Html.DisplayNameFor(model => model.Address):</b> @Html.DisplayFor(modelItem => item.Address)</p>
                             <p><b>@Html.DisplayNameFor(model => model.Id):</b> @Html.DisplayFor(modelItem => item.Id)</p>
-                            <p>@Html.ActionLink("Delete", "DeleteInst", new { id = item.Id }, new { onclick = "return confirm('Are sure wants to delete?');" })</p>
+                            <p>@Html.ActionLink("Delete", "DeleteUser", new { id = item.Id }, new { onclick = "return confirm('Are sure wants to delete?');" })</p>
                         }
                     </div>
                 </div>
@@ -33,7 +33,28 @@
 
         }
     </div>
+    @if ((Convert.ToInt32(@Session["Accountid"]) == 1 || Convert.ToInt32(@Session["Accountid"]) == 2) && Model.Count() == 0)
+    {
+        <h3 style="font-style:italic; color:indianred;"> Nobody Has Registered Yet.</h3>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    }
 </div>
+
 <div class="col-md-offset-2 col-md-4">
     <label class="label-danger">@ViewBag.duplicatemessage</label>
 </div>

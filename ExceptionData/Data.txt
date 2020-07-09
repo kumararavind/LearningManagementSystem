@@ -268,3 +268,5 @@ Parameter name: items	 at 09-07-2020 11:18:28
 -----------------------
 Login-->AddUsers-->Object reference not set to an instance of an object.	 at 09-07-2020 11:42:22
 -----------------------
+Enroll-->GetAllCourseEnroll-->Object reference not set to an instance of an object.	 at 09-07-2020 13:31:39
+-----------------------

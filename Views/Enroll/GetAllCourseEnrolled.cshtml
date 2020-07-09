@@ -9,6 +9,10 @@
 <div class="container">
     <h2>Enrolled Courses</h2>
     <hr />
+    @if (Convert.ToInt32(@Session["Accountid"]) == 3 && Model.Count() != 0)
+    {
+        <div><p>@Html.ActionLink("Back To Enrollment List", "GetAllCourseEnroll")</p></div>
+    }
 </div>
 <div class="container">
     <div class="row">
@@ -67,13 +71,13 @@
     @if (Convert.ToInt32(@Session["Accountid"]) == 3 && Model.Count() == 0)
     {
         <h3 style="font-style:italic; color:indianred;">Please Buy And Enroll to Our Courses.<br> Once Enrolled Come To This Section And You Will Get The List Of Courses Enrolled.</h3>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
     }
-    else if (Convert.ToInt32(@Session["Accountid"]) == 2 && Model.Count() == 0)
+    else if ((Convert.ToInt32(@Session["Accountid"]) == 1 || Convert.ToInt32(@Session["Accountid"]) == 2) && Model.Count() == 0)
     {
         <h3 style="font-style:italic; color:indianred;">Nobody Has Enrolled To Your Course.</h3>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     }
 </div>
 

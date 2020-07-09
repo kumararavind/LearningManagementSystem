@@ -14,6 +14,7 @@ namespace LMSProfile.Controllers
 {
     public class UserController : Controller
     {
+        [Route("GetAllUser")]
         [LogExceptions]
         public ActionResult GetAllUser()
         {
@@ -30,7 +31,7 @@ namespace LMSProfile.Controllers
 
         }
 
-
+        [Route("DeleteUser")]
         [LogExceptions]
         public ActionResult DeleteUser(int id)
         {
