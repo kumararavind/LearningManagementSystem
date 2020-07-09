@@ -9,7 +9,7 @@
     <br /><br />
     <br />
     <div class="container-fluid" style="">
-        @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+        @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
 
@@ -32,9 +32,10 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-4">
-                        <label class="label-danger">@ViewBag.duplicatemessage</label>
+                        <label class="label-danger">@ViewData["error"]</label>
                     </div>
                 </div>
+
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">

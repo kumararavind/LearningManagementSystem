@@ -29,6 +29,7 @@ namespace LMSProfile.Controllers
 
         }
 
+        [Route("Index")]
         [LogExceptions]
         public ActionResult Index()
         {
@@ -57,7 +58,6 @@ namespace LMSProfile.Controllers
         }
 
         [HttpPost]
-        [Route("Index")]
         [LogExceptions]
         public ActionResult Index(LoginLogout ll,FormCollection form) //this is the login page which u will see at first.
         {
@@ -104,26 +104,24 @@ namespace LMSProfile.Controllers
                 }
                 else
                 {
-                            
-                    ViewData["message"] = "Login Attempt Failed! Check Email And Password";
+                    ViewData["error"] = "Invalid Credentials! Please enter the details properly and try again.";
                 }
             }
-                
-
                 con.Close();
-
+                return View(ll);
             }
             catch (SqlException)
             {
-                ViewData["message"] = "Login Attempt Failed! Check Email And Password";
+                ViewData["error"] = "Invalid Credentials! Please enter the details properly and try again.";
+                return View(ll);
             }
             catch(NullReferenceException)
             {
-                ViewData["message"] = "Login Attempt Failed! Check Email And Password";
+                ViewData["error"] = "Invalid Credentials! Please enter the details properly and try again.";
+                return View(ll);
             }
 
-        ViewBag.DuplicateMesaage = "Wrong Credentials";
-        return RedirectToAction("Index");
+        
         }
 
         [LogExceptions]
@@ -141,20 +139,22 @@ namespace LMSProfile.Controllers
             
         }
 
-      
+        [Route("AddUsers")]
         [LogExceptions]
-        public ActionResult AddUsers(ProfileModel model)
+        public ActionResult AddUsers()
         {
+            LoginRepo Lr1 = new LoginRepo();
+            ProfileModel model1 = Lr1.dropdownrepo1();
             try
             {
                 LoginRepo Lr = new LoginRepo();
-                ProfileModel model1 = Lr.dropdownrepo1();
-                return View(model1);
+                ProfileModel model = Lr.dropdownrepo1();
+                return View(model);
             }
             catch (SqlException)
             {
-                ViewBag.duplicatemessage = "Please Enter All The Data";
-                return RedirectToAction("AddUsers", model);
+                ViewData["Errormessage"] = "Please Enter All The Data.";
+                return View(model1);
             }
         }
 
@@ -162,21 +162,24 @@ namespace LMSProfile.Controllers
         [LogExceptions]
         public ActionResult AddUsers(ProfileModel model, FormCollection form)
         {
+            LoginRepo Lr1 = new LoginRepo();
+            ProfileModel model1 = Lr1.dropdownrepo1();
             try
             {
                 LoginRepo Lr = new LoginRepo();
-                if(Lr.AddUsersrepo(model,form))
+                ProfileModel model2 = Lr.dropdownrepo1();
+                if (Lr.AddUsersrepo(model,form))
                 {
-                    ViewBag.SuccessMessage = "Course details added successfully";
+                    ViewData["Successmessage"] = "Course details added successfully.";
                     
                 }
-                return RedirectToAction("AddUsers", new ProfileModel());
+                return View(model2);
 
             }
             catch (SqlException)
             {
-                ViewBag.duplicatemessage = "This Email Address is Already taken";
-                return View("AddUsers", model);
+                ViewData["Errormessage"] = "This Email Address is Already taken.";
+                return View(model1);
             }
             
         }

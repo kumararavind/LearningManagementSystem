@@ -258,3 +258,13 @@ Login-->Index-->The number  is unverified. Trial accounts cannot send messages t
 -----------------------
 Login-->Index-->The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.	 at 03-07-2020 14:47:04
 -----------------------
+Login-->AddUsers-->Value cannot be null.
+Parameter name: items	 at 09-07-2020 11:05:26
+-----------------------
+Login-->AddUsers-->Object reference not set to an instance of an object.	 at 09-07-2020 11:13:23
+-----------------------
+Login-->AddUsers-->Value cannot be null.
+Parameter name: items	 at 09-07-2020 11:18:28
+-----------------------
+Login-->AddUsers-->Object reference not set to an instance of an object.	 at 09-07-2020 11:42:22
+-----------------------
